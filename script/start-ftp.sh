@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker run -d -v  ~/www/ftp:/home/vsftpd \
+docker run -d -v  /home/ubuntu/www/Hilton/laravel/public/:/home/vsftpd \
 -p 20-21:20-21 -p 21100-21110:21100-21110 \
 -e FTP_USER=bosco -e FTP_PASS=hilton \
 -e PASV_ADDRESS=172.31.13.190 \
