@@ -37,23 +37,37 @@
         </style>
     </head>
     <body class="antialiased" style="display: flex;
-                align-items: center;
-                flex-direction: column;
-                justify-content: center;
-                width: 100vw;
-                height: 100vh;
-                background-color: black;">
-       <div style="position: relative;">
-           <img class="background-image" src="/bosco/open.jpg" title="Opening Soon" alt="Opening Soon">
-
+                            align-items: center;
+                            flex-direction: column;
+                            justify-content: center;
+                            width: 100vw;
+                            height: 100vh;
+                            background-color: black;">
+        <div style="position: relative;">
+            <img class="background-image" src="/bosco/open.jpg" title="Opening Soon" alt="Opening Soon">
             <div class="" style="width: 100%;
-                    position: absolute;
-                    top: 0;
-                    display: flex;
-                    align-content: center;
-                    justify-content: center;">
+                                position: absolute;
+                                top: 18px;
+                                display: flex;
+                                align-content: center;
+                                justify-content: center;">
                 <img style="width:65%; " src="/assets/images/logo.jpg" title="Opening Soon" alt="Opening Soon">
             </div>
-       </div>
+            <div style="    position: absolute;
+                color: white;
+                display: flex;
+                flex-direction: column;
+                right: 0;
+                bottom: 35px;
+                font-size: 13px;
+            }">
+                <div style="margin: 5px">
+                    Email: <a style="color: lightskyblue;text-decoration: underline; margin: 6px;" href="mailto:info@angels26.com.au">info@angels26.com.au</a>
+                </div>
+                <div style="margin: 5px">
+                    Phone: <a style="color: lightskyblue;text-decoration: underline; margin: 6px;"  href="tel:0450316989">0450316989</a>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
