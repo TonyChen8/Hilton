@@ -13,6 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//admin
+Route::group(['domain' => 'admin.angels26.com.au'], function () {
+    require __DIR__ . '/auth.php';
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })
+        ->middleware(['auth'])
+        ->name('dashboard');
+});
+
+Route::group(['domain' => 'test.angels26.com.au'], function () {
+    Route::get('/', function () {
+        return view('home');
+    })->name('home');
+});
+
+Route::group(['domain' => 'www.angels26.com.au'], function () {
+    Route::get('/', function () {
+        return view('welcome');
+    });
 });
