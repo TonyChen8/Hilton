@@ -24,9 +24,7 @@ Route::group(['domain' => 'admin.angels26.com.au'], function () {
 });
 
 Route::group(['domain' => 'test.angels26.com.au'], function () {
-    Route::get('/', function () {
-        return view('home');
-    })->name('home');
+   require __DIR__ . '/home.php';
 });
 
 Route::group(['domain' => 'www.angels26.com.au'], function () {
