@@ -90,7 +90,7 @@ $items=[
                 </p>
             </div>
             <div class="mt-20 p-5 w-full" style="background-color: #601B42">
-                <span class="font-bold text-lg text-left">Copyright 2021 Angel26, all right reserved.</span>
+                <span class="font-bold text-lg text-left">Copyright 2021 Angel26, all rights reserved.</span>
             </div>
         </div>
     </div>

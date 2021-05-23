@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 //admin
 Route::group(['domain' => 'admin.angels26.com.au'], function () {
     require __DIR__ . '/auth.php';
-    Route::get('/dashboard', function () {
+    Route::get('/', function () {
         return view('dashboard');
     })
         ->middleware(['auth'])
