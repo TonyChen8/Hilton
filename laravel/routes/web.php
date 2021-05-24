@@ -17,10 +17,15 @@ use Illuminate\Support\Facades\Route;
 Route::group(['domain' => 'admin.angels26.com.au'], function () {
     require __DIR__ . '/auth.php';
     Route::get('/', function () {
-        return view('dashboard');
+        return view('staffs');
     })
         ->middleware(['auth'])
-        ->name('dashboard');
+        ->name('staffs');
+    Route::get('/schedule', function () {
+        return view('schedule');
+    })
+        ->middleware(['auth'])
+        ->name('schedule');
 });
 
 Route::group(['domain' => 'test.angels26.com.au'], function () {

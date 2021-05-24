@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 
 function Example() {
     return (
-        <div className="container">
+
+        <div className="max-w-7xl mx-auto" style={{"backgroundColor": "red"}}>
             <div className="row justify-content-center">
                 <div className="col-md-8">
                     <div className="card">
@@ -19,6 +20,6 @@ function Example() {
 
 export default Example;
 
-if (document.getElementById('example')) {
-    ReactDOM.render(<Example />, document.getElementById('example'));
+if (document.getElementById('reactjs')) {
+    ReactDOM.render(<Example />, document.getElementById('reactjs'));
 }
