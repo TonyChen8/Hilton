@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\StaffsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,20 +16,27 @@ use Illuminate\Support\Facades\Route;
 //admin
 Route::group(['domain' => 'admin.angels26.com.au'], function () {
     require __DIR__ . '/auth.php';
-    Route::get('/', function () {
-        return view('staffs');
-    })
-        ->middleware(['auth'])
-        ->name('staffs');
-    Route::get('/schedule', function () {
-        return view('schedule');
-    })
-        ->middleware(['auth'])
-        ->name('schedule');
 });
 
+Route::group(
+    [
+        'domain' => 'admin.angels26.com.au',
+        'middleware' => 'auth',
+    ],
+    function () {
+        Route::get('/', [StaffsController::class, 'index'])->name('staffs');
+
+        Route::post('/staff', [StaffsController::class, 'store']);
+        Route::get('/staffs', [StaffsController::class, 'staffs']);
+
+        Route::get('/schedule', function () {
+            return view('schedule');
+        })->name('schedule');
+    }
+);
+
 Route::group(['domain' => 'test.angels26.com.au'], function () {
-   require __DIR__ . '/home.php';
+    require __DIR__ . '/home.php';
 });
 
 Route::group(['domain' => 'www.angels26.com.au'], function () {
