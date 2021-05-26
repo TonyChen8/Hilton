@@ -15,10 +15,10 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100 flex flex-col">
+    <div class="h-screen bg-gray-100 flex flex-col w-screen">
         @include('layouts.navigation')
         <!-- Page Content -->
-        <div id="reactjs" class="flex-1"></div>
+        <div id="reactjs" class="flex-1 w-4/5 mx-auto p-12 overflow-hidden"></div>
     </div>
 </body>
 

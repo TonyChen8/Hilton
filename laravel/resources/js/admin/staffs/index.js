@@ -1,15 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import { Provider } from 'react-redux'
+import { createStore } from "redux";
+import Reducer from "./reducer";
+
 import List from "./list";
 import Details from "./details";
 
+const store = createStore(Reducer);
+
 function Staffs() {
   return (
-    <div className="max-w-7xl mx-auto flex flex-row py-12 max-h-full">
-      <List></List>
-      <Details></Details>
-    </div>
+    <Provider store={store}>
+      <div className="flex flex-row h-full overflow-hidden">
+        <List></List>
+        <Details></Details>
+      </div>
+    </Provider>
   );
 }
 
