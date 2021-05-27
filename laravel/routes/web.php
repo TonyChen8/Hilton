@@ -26,14 +26,20 @@ Route::group(
     function () {
         Route::get('/', [StaffsController::class, 'index'])->name('staffs');
 
-        Route::post('/staff', [StaffsController::class, 'store']);
-        Route::get('/staffs', [StaffsController::class, 'staffs']);
+        // Route::post('/staff', [StaffsController::class, 'store']);
+        // Route::get('/staffs', [StaffsController::class, 'staffs']);
 
         Route::get('/schedule', function () {
             return view('schedule');
         })->name('schedule');
     }
 );
+
+
+        Route::post('/staff', [StaffsController::class, 'store']);
+        Route::put('/staff/{id}', [StaffsController::class, 'update']);
+        Route::get('/staffs', [StaffsController::class, 'staffs']);
+
 
 Route::group(['domain' => 'test.angels26.com.au'], function () {
     require __DIR__ . '/home.php';
