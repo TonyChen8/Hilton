@@ -6,12 +6,14 @@ import Staff from "../../models/staff";
 
 function Details() {
   const staff = useSelector((state) => state.selectedStaff || new Staff({}));
+  const dispatch = useDispatch();
 
   const [key, setKey] = useState("");
   const [name, setName] = useState("");
   const [title, setTitle] = useState("");
   const [image, setImageName] = useState("");
   const [path, setImagePath] = useState("");
+  const [description, setDescription] = useState("");
 
   useEffect(() => {
     setKey(staff.getId());
@@ -19,13 +21,14 @@ function Details() {
     setTitle(staff.getTitle());
     setImageName(staff.getImage());
     setImagePath(staff.getImage(true));
+    setDescription(staff.getDescription());
   }, [staff]);
 
   function onNameChange(text) {
-    console.log("/laravel/resources/js/admin/staffs/details.js:11", text);
+    setName(text);
   }
   function onTitleChange(text) {
-    console.log("/laravel/resources/js/admin/staffs/details.js:11", text);
+    setTitle(text);
   }
   function onImageChange(text) {
     let newImage = new Staff({ image: text });
@@ -33,8 +36,26 @@ function Details() {
     setImageName(newImage.getImage());
   }
 
-  function onSave() {}
-  function onDelete() {}
+  function onDescriptionChange(text) {
+    setDescription(text);
+  }
+
+  async function onSave() {
+    let res = await axios.put(`/staff/${key}`, {
+      name,
+      title,
+      image,
+      description,
+    });
+    console.log("/laravel/resources/js/admin/staffs/details.js:43", res);
+    dispatch({ type: "set.staffs", data: { staffs: res.data } });
+  }
+
+  async function onDelete() {
+    let res = await axios.delete(`/staff/${key}`);
+    dispatch({ type: "set.staffs", data: { staffs: res.data } });
+    dispatch({ type: "select.staff", data: { staff: null } });
+  }
 
   return (
     <div className="flex flex-col bg-white p-16 flex-1 rounded-md">
@@ -73,13 +94,21 @@ function Details() {
         </div>
 
         <div className="border ml-auto w-48 flex flex-row items-center">
-          <img src={path} className="w-full" alt="" />
+          {image && image.length > 0 && (
+            <img src={path} className="w-full" alt="" />
+          )}
         </div>
       </div>
 
       <div className="mb-16">
         <label className="text-sm">Description</label>
-        <textarea type="text" className="w-full" />
+        <textarea
+          key={key}
+          type="text"
+          className="w-full"
+          onChange={(e) => onDescriptionChange(e.target.value)}
+          defaultValue={description}
+        ></textarea>
       </div>
 
       <div className="flex flex-row">

@@ -7,15 +7,14 @@ import Staff from "../../models/staff";
 import { AiOutlineUser } from "react-icons/ai";
 
 function List() {
-  const [staffs, setStaffs] = useState([]);
   const dispatch = useDispatch();
-  const [selectedStaff, setSelected] = useState(new Staff({}));
+  const selectedStaff = useSelector((state) => state.selectedStaff || new Staff({}));
+  const staffs = useSelector((state) => state.staffs || []);
 
   async function getAllStaffs() {
     let res = await axios.get("/staffs");
-    console.log("/laravel/resources/js/admin/staffs/list.js:10", res);
     if (res && res.data) {
-      setStaffs(res.data.map((item) => new Staff(item)));
+      dispatch({ type: "set.staffs", data: { staffs: res.data } });
     } else {
       alert("Cannot fetch all staffs information. Try to refresh this page.");
     }
@@ -27,16 +26,14 @@ function List() {
 
   async function addNewStaff() {
     let res = await axios.post("/staff");
-    console.log("/laravel/resources/js/admin/staffs/list.js:7", res);
     if (res && res.data) {
-      setStaffs(res.data.map((item) => new Staff(item)));
+      dispatch({ type: "set.staffs", data: { staffs: res.data } });
     } else {
       alert("Cannot fetch all staffs information. Try to refresh this page.");
     }
   }
 
   function onSelectStaff(item) {
-    setSelected(item);
     dispatch({ type: "select.staff", data: { staff: item } });
   }
 

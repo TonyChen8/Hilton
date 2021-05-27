@@ -15,38 +15,37 @@ use App\Http\Controllers\StaffsController;
 
 //admin
 Route::group(['domain' => 'admin.angels26.com.au'], function () {
-    require __DIR__ . '/auth.php';
+  require __DIR__ . '/auth.php';
 });
 
 Route::group(
-    [
-        'domain' => 'admin.angels26.com.au',
-        'middleware' => 'auth',
-    ],
-    function () {
-        Route::get('/', [StaffsController::class, 'index'])->name('staffs');
+  [
+    'domain' => 'admin.angels26.com.au',
+    'middleware' => 'auth',
+  ],
+  function () {
+    Route::get('/', [StaffsController::class, 'index'])->name('staffs');
 
-        // Route::post('/staff', [StaffsController::class, 'store']);
-        // Route::get('/staffs', [StaffsController::class, 'staffs']);
+    // Route::post('/staff', [StaffsController::class, 'store']);
+    // Route::get('/staffs', [StaffsController::class, 'staffs']);
 
-        Route::get('/schedule', function () {
-            return view('schedule');
-        })->name('schedule');
-    }
+    Route::post('/staff', [StaffsController::class, 'store']);
+    Route::put('/staff/{id}', [StaffsController::class, 'update']);
+    Route::delete('/staff/{id}', [StaffsController::class, 'delete']);
+    Route::get('/staffs', [StaffsController::class, 'staffs']);
+
+    Route::get('/schedule', function () {
+      return view('schedule');
+    })->name('schedule');
+  }
 );
 
-
-        Route::post('/staff', [StaffsController::class, 'store']);
-        Route::put('/staff/{id}', [StaffsController::class, 'update']);
-        Route::get('/staffs', [StaffsController::class, 'staffs']);
-
-
 Route::group(['domain' => 'test.angels26.com.au'], function () {
-    require __DIR__ . '/home.php';
+  require __DIR__ . '/home.php';
 });
 
 Route::group(['domain' => 'www.angels26.com.au'], function () {
-    Route::get('/', function () {
-        return view('welcome');
-    });
+  Route::get('/', function () {
+    return view('welcome');
+  });
 });

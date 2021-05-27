@@ -14,7 +14,6 @@ class StaffsController extends Controller
 
   public function store(Request $request)
   {
-    // $id = $request->input('id');
     $staff = Staffs::create();
     return $this->staffs();
   }
@@ -28,9 +27,22 @@ class StaffsController extends Controller
   public function update(Request $request, $id)
   {
     $staff = Staffs::find($id);
-    if(isset($staff)){
-        $staff->fill($request->input())->save();
+    if (isset($staff)) {
+      $staff->fill($request->input())->save();
+    } else {
+      return abort(404);
     }
-    return response()->json($staff);
+    return $this->staffs();
+  }
+
+  public function delete(Request $request, $id)
+  {
+    $staff = Staffs::find($id);
+    if (isset($staff)) {
+      $staff->delete();
+    } else {
+      return abort(404);
+    }
+    return $this->staffs();
   }
 }
