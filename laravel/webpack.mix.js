@@ -12,6 +12,7 @@ const mix = require("laravel-mix");
  */
 
 mix.js("resources/js/admin/staffs/index.js", "public/js/staffs.js").react();
+mix.js("resources/js/admin/schedule/index.js", "public/js/schedule.js").react();
 
 mix.postCss("resources/css/app.css", "public/css", [
         require("postcss-import"),
