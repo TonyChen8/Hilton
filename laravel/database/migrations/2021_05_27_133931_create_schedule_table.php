@@ -13,16 +13,16 @@ class CreateScheduleTable extends Migration
      */
     public function up()
     {
-        Schema::create('schedule', function (Blueprint $table) {
+        Schema::create('schedules', function (Blueprint $table) {
             $table->id();
-            $table->string("staff_id");
-            $table->string("mon");
-            $table->string("tue");
-            $table->string("wed");
-            $table->string("thu");
-            $table->string("fri");
-            $table->string("sat");
-            $table->string("sun");
+            $table->string("staff_id")->nullable();
+            $table->string("mon")->nullable();
+            $table->string("tue")->nullable();
+            $table->string("wed")->nullable();
+            $table->string("thu")->nullable();
+            $table->string("fri")->nullable();
+            $table->string("sat")->nullable();
+            $table->string("sun")->nullable();
             $table->timestamps();
         });
     }
@@ -34,6 +34,6 @@ class CreateScheduleTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('schedule');
+        Schema::dropIfExists('schedules');
     }
 }

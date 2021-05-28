@@ -12,7 +12,13 @@ export default class Staff {
         this.title = title;
         this.description = description;
         this.image = image;
-        this.schedule = [...schedule];
+        if (schedule && schedule.staff_id > 0) {
+            // data from api
+            const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+            this.schedule = days.map((day) => schedule[day]);
+        } else {
+            this.schedule = this.schedule ? [...schedule] : [];
+        }
     }
 
     getId() {

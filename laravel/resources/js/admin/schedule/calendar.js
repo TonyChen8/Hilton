@@ -8,9 +8,11 @@ import { AiOutlineCheck } from "react-icons/ai";
 
 function Calendar() {
   const [staffs, setStaffs] = useState([]);
+  const [schedules, setSchedules] = useState([]);
 
   async function getAllStaffs() {
     let res = await axios.get("/staffs");
+    console.log("/Hilton/laravel/resources/js/admin/schedule/calendar.js:15", res);
     if (res && res.data) {
       setStaffs(res.data.map((item) => new Staff(item)));
     } else {
@@ -18,8 +20,19 @@ function Calendar() {
     }
   }
 
+  // async function getSchedules() {
+  //   let res = await axios.get("/schedules");
+  //   console.log("/Hilton/laravel/resources/js/admin/schedule/calendar.js:24", res);
+  //   if (res && res.data) {
+  //     setSchedules(res.data.map((item) => new Staff(item)));
+  //   } else {
+  //     alert("Cannot fetch all staffs information. Try to refresh this page.");
+  //   }
+  // }
+
   useEffect(() => {
     getAllStaffs();
+    // getSchedules();
   }, []);
 
   async function selectDay(staff, index) {
@@ -27,30 +40,46 @@ function Calendar() {
     setStaffs([...staffs]);
   }
 
-  function saveSchedule(item) {
+  const days = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
 
+  async function saveSchedule(item) {
+    if (staffs.length > 0) {
+      let res = await axios.post(`/schedule`, {
+        schedules: staffs.map((staff) => {
+          return {
+            id: staff.getId(),
+            schedules: days.map((day, index) =>
+              staff.getSchedule(false, index)
+            ),
+          };
+        }),
+      });
+    }
   }
 
-  let days = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
   return (
     <div className="flex flex-col h-full bg-white p-8 min-w-xl w-full rounded-md">
       <table className="table-fixed mb-16">
         <thead>
           <tr>
-            <th class="w-1/12"></th>
+            <th className="w-1/12"></th>
             {days.map((day, index) => {
-              return <th class="w-1/12">{day}</th>;
+              return (
+                <th key={index} className="w-1/12">
+                  {day}
+                </th>
+              );
             })}
           </tr>
         </thead>
         <tbody>
           {staffs.map((staff, index) => {
             return (
-              <tr>
+              <tr key={index}>
                 <td className="border text-center">{staff.getName()}</td>
                 {days.map((day, index) => {
                   return (
-                    <td className="border text-center">
+                    <td key={index} className="border text-center">
                       <div
                         className="cursor-pointer w-full h-12 flex flex-row items-center justify-center"
                         onClick={(e) => selectDay(staff, index)}
