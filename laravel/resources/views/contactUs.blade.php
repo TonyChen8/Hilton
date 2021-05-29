@@ -1,11 +1,4 @@
 <x-main-layout>
-
-  <x-slot name="reactjs">
-  </x-slot>
-
-
-    <img class="absolute top-32" src="/bosco/bg-girl.png" style="height: 596px; width: auto; z-index: -9; object-fit: cover;" title="girl" alt="girl" />
-
     <div class="flex flex-row w-4/5 mb-80">
         <div class="flex flex-col ml-auto relative px-5" style="color: white">
             <h1 class="text-5xl">

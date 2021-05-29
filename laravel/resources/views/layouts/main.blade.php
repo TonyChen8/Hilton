@@ -3,7 +3,7 @@ $items=[
 ['label'=>"Angel26", 'route' => 'home'],
 ['label'=>"Service", 'route' => 'service'],
 ['label'=>"Our Ladies", 'route' => 'ladies'],
-['label'=>"Who's On", 'route' => 'whoson'],
+['label'=>"Who's On", 'route' => 'whosOn'],
 ['label'=>"Contact Us", 'route' => 'contactUs'],
 ];
 @endphp
@@ -16,16 +16,16 @@ $items=[
   <title>Angel26</title>
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+  <link href="{{ mix('css/app.css') }}" rel="stylesheet" />
+  {{ $reactjs }}
 </head>
 
 <body class="font-sans antialiased" style="background-color: #75244F">
   <div class="relative" style="color: rgb(255, 199, 1)">
     <img class="absolute inset-x-0 top-0" src="/bosco/background.jpg" style="z-index: -10" />
-    <img class="absolute top-32" src="/bosco/bg-girl.png" style="height: 596px; width: auto; z-index: -9; object-fit: cover;" title="girl" alt="girl" />
     <div class="flex flex-col items-center z-10">
-      <div class="flex flex-row items-center mt-12">
-        <img class="cursor-pointer mr-20" src="/bosco/logo.jpg" style="width: 300px" />
+      <div class="flex flex-row items-center mt-12" style="width: 1200px">
+        <img class="cursor-pointer mr-10" src="/bosco/logo.jpg" style="width: 300px" />
         @foreach ($items as $item)
         <div class="flex flex-col items-center relative" @if (request()->routeIs($item['route']))
           style="background-image: url('/bosco/navcurbg.png'); background-repeat: no-repeat;"
@@ -37,7 +37,26 @@ $items=[
         </div>
         @endforeach
       </div>
-      {{$body}}
+
+      <div style="min-height: 50vh">{{ $slot }}</div>
+
+      <div class="w-1/2 text-2xl mt-16">
+        <table width="100%">
+          <thead>
+            <tr>
+              <td class="border border-yellow-500 text-center"><a href={{route('service')}}>service</a></td>
+              <td class="border border-yellow-500 text-center"><a href={{route('ladies')}}>our ladies</a></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-yellow-500 text-center"><a href={{route('whosOn')}}>who’s on</a></td>
+              <td class="border border-yellow-500 text-center"><a href={{route('contactUs')}}>contact us</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <div class="mt-20 p-5 w-full" style="background-color: #601B42">
         <span class="font-bold text-lg text-left">Copyright 2021 Angel26, all rights reserved.</span>
       </div>

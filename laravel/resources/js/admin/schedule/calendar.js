@@ -12,7 +12,10 @@ function Calendar() {
 
   async function getAllStaffs() {
     let res = await axios.get("/staffs");
-    console.log("/Hilton/laravel/resources/js/admin/schedule/calendar.js:15", res);
+    console.log(
+      "/Hilton/laravel/resources/js/admin/schedule/calendar.js:15",
+      res
+    );
     if (res && res.data) {
       setStaffs(res.data.map((item) => new Staff(item)));
     } else {
@@ -97,13 +100,17 @@ function Calendar() {
         </tbody>
       </table>
 
-      <div className="flex flex-row ">
-        <div
-          className="bg-blue-400 ml-auto text-white rounded text-center cursor-pointer py-1 px-8"
-          onClick={saveSchedule}
-        >
-          Save Schedule
-        </div>
+      <div className="flex flex-row flex-1 items-center justify-center">
+        {staffs.length > 0 ? (
+          <div
+            className="bg-blue-400 ml-auto text-white rounded text-center cursor-pointer py-1 px-8"
+            onClick={saveSchedule}
+          >
+            Save Schedule
+          </div>
+        ) : (
+          <div className="text-3xl">You have to add a staff first.</div>
+        )}
       </div>
     </div>
   );

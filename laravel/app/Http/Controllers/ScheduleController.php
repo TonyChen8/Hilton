@@ -12,7 +12,6 @@ class ScheduleController extends Controller {
 
 	public function store(Request $request) {
 		$schedules = $request->input("schedules");
-
 		$days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 
 		if (isset($schedules) && count($schedules) > 0) {
@@ -34,7 +33,7 @@ class ScheduleController extends Controller {
 		return Schedule::all();
 	}
 
-  public function schedules(Request $request) {
-    return Schedule::all();
-  }
+	public function schedules(Request $request) {
+		return Schedule::all();
+	}
 }
