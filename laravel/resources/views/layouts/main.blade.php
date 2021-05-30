@@ -4,7 +4,7 @@ $items=[
 ['label'=>"Service", 'route' => 'service'],
 ['label'=>"Our Ladies", 'route' => 'ladies'],
 ['label'=>"Who's On", 'route' => 'whosOn'],
-['label'=>"Contact Us", 'route' => 'contactUs'],
+['label'=>"Contact Us", 'route' => 'contactus'],
 ];
 @endphp
 <!DOCTYPE html>
@@ -50,8 +50,8 @@ $items=[
           </thead>
           <tbody>
             <tr>
-              <td class="border border-yellow-500 text-center"><a href={{route('whosOn')}}>who’s on</a></td>
-              <td class="border border-yellow-500 text-center"><a href={{route('contactUs')}}>contact us</a></td>
+              <td class="border border-yellow-500 text-center"><a href={{route('whoson')}}>who’s on</a></td>
+              <td class="border border-yellow-500 text-center"><a href={{route('contactus')}}>contact us</a></td>
             </tr>
           </tbody>
         </table>

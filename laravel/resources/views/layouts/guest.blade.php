@@ -4,7 +4,7 @@ $items=[
 ['label'=>"Service", 'route' => 'service'],
 ['label'=>"Our Ladies", 'route' => 'ladies'],
 ['label'=>"Who's On", 'route' => 'whoson'],
-['label'=>"Contact Us", 'route' => 'contactUs'],
+['label'=>"Contact Us", 'route' => 'contactus'],
 ];
 @endphp
 <!DOCTYPE html>
