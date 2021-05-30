@@ -12,7 +12,7 @@
                 Ph: 0450316989
             </h1>
             <h1 class="text-2xl">
-                xxxxxxxxx, Coopers Plains
+                26 Magnesium Dr, Crestmead QLD 4132
             </h1>
             <img class="absolute top-0 right-0 w-full" src="/bosco/title-bg-bottom.png"/>
         </div>

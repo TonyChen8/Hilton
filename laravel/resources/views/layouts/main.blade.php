@@ -20,9 +20,9 @@ $items=[
   {{ $reactjs }}
 </head>
 
-<body class="font-sans antialiased" style="background-color: #75244F">
+<body class="font-sans antialiased" style="background-color: rgba(0,0,0,0.85)">
   <div class="relative" style="color: rgb(255, 199, 1)">
-    <img class="absolute inset-x-0 top-0" src="/bosco/background.jpg" style="z-index: -10" />
+    <!-- <img class="absolute inset-x-0 top-0" src="/bosco/background.jpg" style="z-index: -10" /> -->
     <div class="flex flex-col items-center z-10">
       <div class="flex flex-row items-center mt-12" style="width: 1200px">
         <img class="cursor-pointer mr-10" src="/bosco/logo.jpg" style="width: 300px" />
@@ -40,7 +40,7 @@ $items=[
 
       <div style="min-height: 50vh">{{ $slot }}</div>
 
-      <div class="w-1/2 text-2xl mt-16">
+      <div class="w-1/2 text-2xl mt-10">
         <table width="100%">
           <thead>
             <tr>
@@ -57,7 +57,7 @@ $items=[
         </table>
       </div>
 
-      <div class="mt-20 p-5 w-full" style="background-color: #601B42">
+      <div class="mt-20 p-5 w-full" style="background-color: #000">
         <span class="font-bold text-lg text-left">Copyright 2021 Angel26, all rights reserved.</span>
       </div>
     </div>
