@@ -21,7 +21,7 @@ $items=[
 </head>
 
 <body class="font-sans antialiased" style="background-color: rgba(0,0,0,0.85)">
-  <div class="relative" style="color: rgb(255, 199, 1)">
+  <div class="relative text-yellow">
     <!-- <img class="absolute inset-x-0 top-0" src="/bosco/background.jpg" style="z-index: -10" /> -->
     <div class="flex flex-col items-center z-10">
       <div class="flex flex-row items-center mt-12" style="width: 1200px">

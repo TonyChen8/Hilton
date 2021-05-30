@@ -35,7 +35,7 @@ function Whoson() {
           <Title text="who's on"></Title>
         </div>
 
-        <div style={{ maxWidth: "1024px" }}>
+        <div className="w-full" style={{ maxWidth: "1024px" }}>
           {staffs ? (
             staffs.length > 0 ? (
               <div className="flex flex-row flex-wrap place-content-between">

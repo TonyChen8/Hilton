@@ -19,13 +19,15 @@ mix.js("resources/js/www/ladies/index.js", "public/js/ladies.js").react();
 mix.js("resources/js/www/whoson/index.js", "public/js/whoson.js").react();
 mix.js("resources/js/www/contactus/index.js", "public/js/contactus.js").react();
 
-mix.postCss("resources/css/app.css", "public/css", [
-        require("postcss-import"),
-        require("tailwindcss"),
-        require("autoprefixer"),
-    ]);
-// .sass('resources/sass/app.scss', 'public/css', [require('tailwindcss')]);
+// mix.postCss("resources/css/app.css", "public/css", [
+//         require("postcss-import"),
+//         require("tailwindcss"),
+//         require("autoprefixer"),
+//     ]);
+
+mix.postCss("resources/css/app.css", "public/css", [require("tailwindcss")]);
 
 mix.browserSync({
-    proxy: "http://test.angels26.com.au:8000/",
+  proxy: "http://test.angels26.com.au:8000/",
+  // proxy: "http://admin.angels26.com.au:8000/",
 });

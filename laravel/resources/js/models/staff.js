@@ -14,7 +14,8 @@ export default class Staff {
     this.image = image;
     if (schedule && schedule.staff_id > 0) {
       // data from api
-      this.schedule = schedule;
+      const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+      this.schedule = days.map((day) => schedule[day]);
     } else {
       this.schedule = this.schedule ? [...schedule] : [];
     }
@@ -43,11 +44,10 @@ export default class Staff {
     this.schedule[day] = select;
   }
   isWorkingToday() {
-    let today = new Date()
-      .toString()
-      .split(" ")[0]
-      .toLowerCase();
+    let today = new Date().getDay();
+    const days = [6, 0, 1, 2, 3, 4, 5];
+
     console.log("/laravel/resources/js/models/staff.js:51", this.schedule);
-    return this.schedule[today] == true;
+    return this.schedule[days[today]] == true;
   }
 }
