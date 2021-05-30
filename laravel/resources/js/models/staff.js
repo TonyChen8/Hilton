@@ -38,7 +38,7 @@ export default class Staff {
     return path ? `/bosco/whoson/${this.image}` : this.image;
   }
   getSchedule(all = true, day = 0) {
-    return all ? this.schedule : this.schedule[day];
+    return all ? this.schedule : this.schedule[day] > 0;
   }
   setSchedule(day = 0, select = true) {
     this.schedule[day] = select;

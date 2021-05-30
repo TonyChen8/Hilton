@@ -23,19 +23,8 @@ function Calendar() {
     }
   }
 
-  // async function getSchedules() {
-  //   let res = await axios.get("/schedules");
-  //   console.log("/Hilton/laravel/resources/js/admin/schedule/calendar.js:24", res);
-  //   if (res && res.data) {
-  //     setSchedules(res.data.map((item) => new Staff(item)));
-  //   } else {
-  //     alert("Cannot fetch all staffs information. Try to refresh this page.");
-  //   }
-  // }
-
   useEffect(() => {
     getAllStaffs();
-    // getSchedules();
   }, []);
 
   async function selectDay(staff, index) {
