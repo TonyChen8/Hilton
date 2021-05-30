@@ -66,7 +66,7 @@ function Whoson() {
                 })}
               </div>
             ) : (
-              <div className="text-2xl mt-10">No lady working today.</div>
+              <div className="text-2xl mt-10 text-center">No lady working today.</div>
             )
           ) : null}
         </div>
