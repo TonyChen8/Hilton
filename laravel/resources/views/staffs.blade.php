@@ -9,8 +9,8 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ mix('css/animate.min.css') }}">
-    <link rel="stylesheet" href="{{ mix('css/toastr.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/toastr.css') }}">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <!-- Scripts -->
     <script src="{{ mix('js/staffs.js') }}" defer></script>
