@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { ToastContainer } from "react-toastr";
 
 import axios from "axios";
 import Staff from "../../models/staff";
@@ -7,6 +8,8 @@ import Staff from "../../models/staff";
 function Details() {
   const staff = useSelector((state) => state.selectedStaff || new Staff({}));
   const dispatch = useDispatch();
+
+  const container = useRef();
 
   const [key, setKey] = useState("");
   const [name, setName] = useState("");
@@ -41,20 +44,53 @@ function Details() {
   }
 
   async function onSave() {
-    let res = await axios.put(`/staff/${key}`, {
-      name,
-      title,
-      image,
-      description,
-    });
-    console.log("/laravel/resources/js/admin/staffs/details.js:43", res);
-    dispatch({ type: "set.staffs", data: { staffs: res.data } });
+    try {
+      let res = await axios.put(`/staff/${key}`, {
+        name,
+        title,
+        image,
+        description,
+      });
+
+      if (res && res.status === 200) {
+        container.current.success(
+          `Successfully saved staff's data.`,
+          `success`,
+          {
+            timeOut: 3000,
+          }
+        );
+        console.log("/laravel/resources/js/admin/staffs/details.js:43", res);
+        dispatch({ type: "set.staffs", data: { staffs: res.data } });
+      }
+    } catch (e) {
+      console.log("/laravel/resources/js/admin/staffs/details.js:67", e);
+      container.current.error(`Save staff's data failed.`, `Failed`, {
+        timeOut: 10000,
+      });
+    }
   }
 
   async function onDelete() {
-    let res = await axios.delete(`/staff/${key}`);
-    dispatch({ type: "set.staffs", data: { staffs: res.data } });
-    dispatch({ type: "select.staff", data: { staff: null } });
+    try {
+      let res = await axios.delete(`/staff/${key}`);
+      if (res && res.status === 200) {
+        container.current.success(
+          `Successfully deleted staff's data.`,
+          `success`,
+          {
+            timeOut: 3000,
+          }
+        );
+        dispatch({ type: "set.staffs", data: { staffs: res.data } });
+        dispatch({ type: "select.staff", data: { staff: null } });
+      }
+    } catch (e) {
+      console.log("/laravel/resources/js/admin/staffs/details.js:83", e);
+      container.current.error(`Delete staff's data failed.`, `Failed`, {
+        timeOut: 10000,
+      });
+    }
   }
 
   return (
@@ -125,6 +161,8 @@ function Details() {
           Save
         </div>
       </div>
+
+      <ToastContainer ref={container} className="toast-top-right" />
     </div>
   );
 }

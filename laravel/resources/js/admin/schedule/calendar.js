@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 // import { useSelector, useDispatch } from "react-redux";
+import { ToastContainer } from "react-toastr";
 
 import axios from "axios";
 import Staff from "../../models/staff";
@@ -9,17 +10,27 @@ import { AiOutlineCheck } from "react-icons/ai";
 function Calendar() {
   const [staffs, setStaffs] = useState([]);
   const [schedules, setSchedules] = useState([]);
+  const container = useRef();
 
   async function getAllStaffs() {
-    let res = await axios.get("/staffs");
-    console.log(
-      "/Hilton/laravel/resources/js/admin/schedule/calendar.js:15",
-      res
-    );
-    if (res && res.data) {
-      setStaffs(res.data.map((item) => new Staff(item)));
-    } else {
-      alert("Cannot fetch all staffs information. Try to refresh this page.");
+    try {
+      let res = await axios.get("/staffs");
+      console.log(
+        "/Hilton/laravel/resources/js/admin/schedule/calendar.js:15",
+        res
+      );
+      if (res && res.data) {
+        setStaffs(res.data.map((item) => new Staff(item)));
+      }
+    } catch (e) {
+      console.log("/laravel/resources/js/admin/schedule/calendar.js:21", e);
+      container.current.error(
+        `Cannot fetch all staffs information.`,
+        `Please refresh this page.`,
+        {
+          timeOut: 10000,
+        }
+      );
     }
   }
 
@@ -35,17 +46,35 @@ function Calendar() {
   const days = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
 
   async function saveSchedule(item) {
-    if (staffs.length > 0) {
-      let res = await axios.post(`/schedule`, {
-        schedules: staffs.map((staff) => {
-          return {
-            id: staff.getId(),
-            schedules: days.map((day, index) =>
-              staff.getSchedule(false, index)
-            ),
-          };
-        }),
-      });
+    try {
+      if (staffs.length > 0) {
+        let res = await axios.post(`/schedule`, {
+          schedules: staffs.map((staff) => {
+            return {
+              id: staff.getId(),
+              schedules: days.map((day, index) =>
+                staff.getSchedule(false, index)
+              ),
+            };
+          }),
+        });
+        container.current.success(
+          `Successfully saved staffs' schedules.`,
+          `Success`,
+          {
+            timeOut: 3000,
+          }
+        );
+      }
+    } catch (e) {
+      console.log("/laravel/resources/js/admin/schedule/calendar.js:62", e);
+       container.current.error(
+        `Cannot save all staffs' schedules.`,
+        `Please refresh this page.`,
+        {
+          timeOut: 10000,
+        }
+      );
     }
   }
 
@@ -101,6 +130,8 @@ function Calendar() {
           <div className="text-3xl">You have to add a staff first.</div>
         )}
       </div>
+
+      <ToastContainer ref={container} className="toast-top-right" />
     </div>
   );
 }

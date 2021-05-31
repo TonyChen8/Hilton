@@ -35,6 +35,7 @@
     },
     "dependencies": {
         "react-icons": "^4.2.0",
-        "react-redux": "^7.2.4"
+        "react-redux": "^7.2.4",
+        "react-toastr": "^3.0.0"
     }
 }
