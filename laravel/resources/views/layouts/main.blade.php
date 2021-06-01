@@ -16,15 +16,15 @@ $items=[
   <title>Angel26</title>
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="{{ mix('css/app.css') }}" rel="stylesheet" />
-  {{ $reactjs }}
 </head>
 
 <body class="font-sans antialiased" style="background-color: rgba(0,0,0,0.85)">
   <div class="relative text-yellow">
     <!-- <img class="absolute inset-x-0 top-0" src="/bosco/background.jpg" style="z-index: -10" /> -->
     <div class="flex flex-col items-center z-10">
-      <div class="flex flex-row items-center mt-12" style="width: 1200px">
+      <div class="flex-row items-center mt-12 sm:flex hidden" style="width: 1200px">
         <img class="cursor-pointer mr-10" src="/bosco/logo.jpg" style="width: 300px" />
         @foreach ($items as $item)
         <div class="flex flex-col items-center relative" @if (request()->routeIs($item['route']))
@@ -38,9 +38,10 @@ $items=[
         @endforeach
       </div>
 
-      <div style="min-height: 50vh">{{ $slot }}</div>
+      <div id="menu" class="w-full sm:hidden"></div>
 
-      <div class="w-1/2 text-2xl mt-10">
+      <div id="reactjs" class="w-full" style="min-height: 50vh"></div>
+      <div class="w-4/5 sm:w-1/2 text-2xl mt-10">
         <table width="100%">
           <thead>
             <tr>
@@ -56,12 +57,14 @@ $items=[
           </tbody>
         </table>
       </div>
-
-      <div class="mt-20 p-5 w-full" style="background-color: #000">
-        <span class="font-bold text-lg text-left">Copyright 2021 Angel26, all rights reserved.</span>
+      <div class="mt-20 p-5 w-full bg-gray-900">
+        <span class="font-bold text-sm text-left sm:text-lg">Copyright 2021 Angel26, all rights reserved.</span>
       </div>
     </div>
   </div>
+
+  <script src="{{ mix('js/menu.js') }}" defer></script>
+  {{ $reactjs ?? "" }}
 </body>
 
 </html>

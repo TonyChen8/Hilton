@@ -5,25 +5,26 @@ import Title from "../../common/title";
 
 function Home() {
   return (
-    <div>
-      <img
-        className="absolute top-32 h-37 w-auto -z-10 object-cove"
-        src="/bosco/bg-girl.png"
-        title="girl"
-        alt="girl"
-      />
-
-      <div className="flex flex-row w-4/5 mb-80">
-        <div className="flex flex-col ml-auto relative px-5 text-white">
-          <h1 className="text-5xl">Ph: 0450316989</h1>
-          <h1 className="text-2xl">26 Magnesium Dr, Crestmead QLD 4132</h1>
+    <div className="w-full">
+      <div className="flex flex-row w-full justify-center mt-10 sm:justify-start sm:mb-80">
+        <div className="flex flex-col justify-center items-center sm:items-start sm:ml-auto relative px-5 text-white">
+          <h1 className="sm:text-5xl">Ph: 0450316989</h1>
+          <h1 className="sm:text-2xl">26 Magnesium Dr, Crestmead QLD 4132</h1>
           <img
             className="absolute top-0 right-0 w-full"
             src="/bosco/title-bg-bottom.png"
           />
         </div>
       </div>
-      <div className="mt-12">
+
+      <img
+        className="sm:absolute top-32 h-37 w-auto -z-10 object-cove mt-20"
+        src="/bosco/bg-girl.png"
+        title="girl"
+        alt="girl"
+      />
+
+      <div className="mt-12 p-4">
         <h1 className="text-3xl text-center">
           Welcome to Asian Star! Brisbane’s best Brothel
         </h1>

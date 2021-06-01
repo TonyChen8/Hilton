@@ -19,6 +19,7 @@ mix.js("resources/js/www/service/index.js", "public/js/service.js").react();
 mix.js("resources/js/www/ladies/index.js", "public/js/ladies.js").react();
 mix.js("resources/js/www/whoson/index.js", "public/js/whoson.js").react();
 mix.js("resources/js/www/contactus/index.js", "public/js/contactus.js").react();
+mix.js("resources/js/common/menu.js", "public/js/menu.js").react();
 
 // mix.postCss("resources/css/app.css", "public/css", [
 //         require("postcss-import"),
