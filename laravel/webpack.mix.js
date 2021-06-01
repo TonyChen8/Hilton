@@ -14,6 +14,7 @@ const mix = require("laravel-mix");
 mix.js("resources/js/admin/staffs/index.js", "public/js/staffs.js").react();
 mix.js("resources/js/admin/schedule/index.js", "public/js/schedule.js").react();
 
+mix.js("resources/js/www/home/index.js", "public/js/home.js").react();
 mix.js("resources/js/www/service/index.js", "public/js/service.js").react();
 mix.js("resources/js/www/ladies/index.js", "public/js/ladies.js").react();
 mix.js("resources/js/www/whoson/index.js", "public/js/whoson.js").react();
