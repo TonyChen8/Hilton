@@ -30,6 +30,8 @@ mix.js("resources/js/common/menu.js", "public/js/menu.js").react();
 mix.postCss("resources/css/app.css", "public/css", [require("tailwindcss")]);
 
 mix.browserSync({
+  open: 'external',
+  host: 'localhost',
   proxy: "http://test.angels26.com.au:8000/",
   // proxy: "http://admin.angels26.com.au:8000/",
 });

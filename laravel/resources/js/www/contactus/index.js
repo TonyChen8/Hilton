@@ -5,18 +5,18 @@ import Title from "../../common/title";
 
 function Contactus() {
   return (
-    <div className="flex flex-col overflow-hidden" style={{ width: "1200px" }}>
-      <div className="my-16 flex flex-col">
+    <div className="flex flex-col px-10 text-sm sm:text-xl overflow-hidden mx-auto w-full sm:w-10/12 max-w-6xl">
+      <div className="my-10 flex flex-col">
         <img
-          className="h-64 w-auto object-contain"
+          className="h-64 w-auto object-cover sm:object-contain"
           src="/bosco/contactus/banner.jpg"
           alt=""
         />
       </div>
-      <div className="flex flex-row">
-        <div className="flex flex-col w-1/2">
+      <div className="flex flex-col sm:flex-row">
+        <div className="flex flex-col w-full sm:w-1/2">
           <div
-            className="p-6 mr-10 mt-3 text-xl"
+            className="p-6 sm:mr-10 mt-3 mb-5"
             style={{ backgroundColor: "rgba(255,255,255,0.1)" }}
           >
             <Title text="Booking and Enquiries"></Title>
@@ -44,9 +44,9 @@ function Contactus() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col w-1/2">
+        <div className="flex flex-col w-full sm:w-1/2">
           <div
-            className="p-6 mx-2 mt-3 text-xl"
+            className="p-6 mt-3"
             style={{ backgroundColor: "rgba(255,255,255,0.1)" }}
           >
             <Title text="OUR ADDRESS"></Title>

@@ -3,17 +3,15 @@ import React from "react";
 export default function Title({ text }) {
   return (
     <div
-      className="text-3xl"
+      className="text-3xl text-center bg-no-repeat bg-bottom bg-cover sm:bg-auto sm:bg-right-bottom sm:text-right"
       style={{
-        background:
-          'url("/bosco/title-bg-bottom.png") no-repeat right -20px bottom',
+        backgroundImage:'url("/bosco/title-bg-bottom.png")',
         height: "100px",
         textTransform: "uppercase",
-        textAlign: "right",
         marginTop: "0px",
       }}
     >
-      {text}
+      <div className="sm:mr-8">{text}</div>
     </div>
   );
 }

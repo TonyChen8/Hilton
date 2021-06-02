@@ -47,7 +47,6 @@ export default class Staff {
     let today = new Date().getDay();
     const days = [6, 0, 1, 2, 3, 4, 5];
 
-    console.log("/laravel/resources/js/models/staff.js:51", this.schedule);
     return this.schedule[days[today]] == true;
   }
 }

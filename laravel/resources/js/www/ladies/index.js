@@ -5,18 +5,18 @@ import Title from "../../common/title";
 
 function Ladies() {
   return (
-    <div className="flex flex-col overflow-hidden" style={{ width: "1200px" }}>
+    <div className="flex flex-col p-8 text-sm sm:text-xl overflow-hidden mx-auto w-full sm:w-10/12 max-w-6xl">
       <div className="w-full mb-10">
         <Title text="our ladies"></Title>
       </div>
-      <div className="flex flex-row items-start">
+      <div className="flex flex-col sm:flex-row items-start">
         <img
-          className="w-1/2 rounded-xl"
+          className="w-full sm:w-1/2 mb-5 rounded-xl"
           src="/bosco/ladies/girl.jpg"
           alt=""
           style={{ objectFit: "contain" }}
         />
-        <div className="w-1/2 text-xl text-white ml-10">
+        <div className="w-full sm:w-1/2 text-white sm:ml-10">
           <div className="mb-5">
             Asian Star is one of the best brothels in Brisbane. We are famous of
             having a variety of most beautiful ladies from different countries.

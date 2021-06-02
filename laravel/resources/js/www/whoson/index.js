@@ -29,21 +29,21 @@ function Whoson() {
   }, []);
 
   return (
-    <div className="flex flex-col overflow-hidden" style={{ width: "1200px" }}>
-      <div className="flex flex-col items-center w-full mb-10">
+    <div className="flex flex-col overflow-hidden mx-auto w-full sm:w-10/12 max-w-6xl">
+      <div className="flex flex-col p-10 items-center w-full mb-10">
         <div className="w-full mb-10">
           <Title text="who's on"></Title>
         </div>
 
-        <div className="w-full" style={{ maxWidth: "1024px" }}>
+        <div className="w-full max-w-6xl">
           {staffs ? (
             staffs.length > 0 ? (
-              <div className="flex flex-row flex-wrap place-content-between">
+              <div className="flex flex-col sm:flex-row flex-wrap place-content-between">
                 {staffs.map((staff, index) => {
                   return (
                     <div
                       key={index}
-                      className="w-1/3 flex flex-col items-center mb-16"
+                      className="w-full sm:w-1/3 flex flex-col items-center mb-16"
                     >
                       <div className="relative">
                         <img

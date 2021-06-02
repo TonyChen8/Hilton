@@ -10,13 +10,15 @@ export default function Menu() {
     setOpen(false);
   }
   return (
-    <div className="w-full h-20 flex flex-row items-center bg-gray-900">
-      <img
-        className="cursor-pointer h-14 w-auto object-contain ml-2"
-        src="/bosco/logo.jpg"
-      />
-      <div className="ml-auto text-2xl mr-10" onClick={open}>
-        <i className="fa fa-bars"></i>
+    <div className="w-full h-20">
+      <div className="fixed left-0 top-0 z-10 w-full h-20 flex flex-row items-center bg-gray-900">
+        <img
+          className="cursor-pointer h-14 w-auto object-contain ml-2"
+          src="/bosco/logo.jpg"
+        />
+        <div className="ml-auto text-2xl mr-10" onClick={open}>
+          <i className="fa fa-bars"></i>
+        </div>
       </div>
 
       {/*menu*/}
@@ -41,19 +43,19 @@ export default function Menu() {
 
         <div className="flex flex-col text-xl p-12">
           <a className="py-3" href="/">
-            home
+            Home
           </a>
           <a className="py-3" href="/service">
-            service
+            Service
           </a>
           <a className="py-3" href="/ladies">
-            ladies
+            Ladies
           </a>
           <a className="py-3" href="/whoson">
-            whoson
+            Who's on
           </a>
-          <a className="py-3" href="/contactus">
-            contactus
+          <a className="py-3" href="/contact">
+            Contact Us
           </a>
         </div>
       </div>
