@@ -46,7 +46,7 @@ $items=[
         <table width="100%">
           <thead>
             <tr>
-              <td class="border border-yellow-500 text-center"><a href={{route('service')}}>service</a></td>
+              <td class="border border-yellow-500 text-center"><a href={{route('service')}}>rate</a></td>
               <td class="border border-yellow-500 text-center"><a href={{route('ladies')}}>our ladies</a></td>
             </tr>
           </thead>
