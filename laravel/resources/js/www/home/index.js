@@ -8,7 +8,7 @@ function Home() {
     <div className="w-full">
       <div className="flex flex-row w-full justify-center mt-10 sm:justify-start sm:mb-80">
         <div className="flex flex-col justify-center items-center sm:items-start sm:ml-auto relative px-5 text-white">
-          <h1 className="sm:text-5xl">Ph: 0450316989</h1>
+          <h1 className="sm:text-5xl">Ph: 07 3803 1000</h1>
           <h1 className="sm:text-2xl">26 Magnesium Dr, Crestmead QLD 4132</h1>
           <img
             className="absolute top-0 right-0 w-full"
@@ -17,12 +17,15 @@ function Home() {
         </div>
       </div>
 
-      <img
-        className="sm:absolute top-32 h-37 w-auto -z-10 object-cove mt-20"
-        src="/bosco/bg-girl.png"
-        title="girl"
-        alt="girl"
-      />
+      <div className="w-full flex-col flex sm:absolute top-32 -z-10 object-cove mt-20 items-center">
+        <img
+          className="w-full h-auto max-w-3xl"
+          src="/bosco/bg-girl.png"
+          title="girl"
+          alt="girl"
+        />
+      </div>
+
 
       <div className="mt-12 p-4">
         <h1 className="text-3xl text-center">

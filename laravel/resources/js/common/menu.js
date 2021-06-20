@@ -46,7 +46,7 @@ export default function Menu() {
             Home
           </a>
           <a className="py-3" href="/service">
-            Service
+            Rate
           </a>
           <a className="py-3" href="/ladies">
             Ladies

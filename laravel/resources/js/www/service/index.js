@@ -9,9 +9,10 @@ function Service() {
       {/*left*/}
       <div className="flex flex-col flex-1 mb-5 sm:mr-10">
         <img
-          className="w-full p-10 sm:p-24 sm:-my-20"
+          className="h-72 object-contain p-10  sm:h-auto w-auto"
           src="/bosco/service/girl.png"
           alt=""
+          style={{ minHeight: "210px", maxHeight: "510px" }}
         />
         <div
           className="p-6 mx-2 mt-3"
@@ -57,18 +58,16 @@ function Service() {
             <thead>
               <tr>
                 <th className="text-left" width="185" height="54">
-                  Duration
+                  Price
                 </th>
                 <th className="text-left" width="147">
-                  Room Hire
+                  Duration
                 </th>
                 <th className="text-left" width="215">
-                  Payment
-                  <br />
-                  to ladies(Approx)
+                  SP Rate
                 </th>
                 <th className="text-left" width="65">
-                  Total
+                  Room Rate
                 </th>
               </tr>
             </thead>
@@ -80,35 +79,104 @@ function Service() {
                   colSpan="4"
                   height="44"
                 >
-                  All-day Price (from 9:30am till 2am)
+                  One Female SP vs One Male Client
                 </td>
               </tr>
               <tr>
-                <td>20 minutes</td>
-                <td>$50</td>
+                <td>$120</td>
+                <td>20 mins</td>
                 <td>$60</td>
-                <td>$110</td>
+                <td>$60</td>
               </tr>
               <tr>
-                <td>30 minutes</td>
-                <td>$60</td>
-                <td>$70</td>
-                <td>$130</td>
+                <td>$140</td>
+                <td>30 mins</td>
+                <td>$75</td>
+                <td>$65</td>
               </tr>
               <tr>
-                <td>45 minutes</td>
-                <td>$90</td>
-                <td>$100</td>
                 <td>$190</td>
+                <td>45 mins</td>
+                <td>$100</td>
+                <td>$90</td>
               </tr>
               <tr>
-                <td>1 Hour</td>
-                <td>$110</td>
-                <td>$130</td>
                 <td>$240</td>
+                <td>1 hr</td>
+                <td>$140</td>
+                <td>$100</td>
+              </tr>
+              <tr>
+                <td>$340</td>
+                <td>90 mins</td>
+                <td>$210</td>
+                <td>$130</td>
+              </tr>
+              <tr>
+                <td>$440</td>
+                <td>120 mins</td>
+                <td>$280</td>
+                <td>$160</td>
+              </tr>
+              <tr className="border-t border-b">
+                <td
+                  className=""
+                  style={{ textAlign: "center" }}
+                  colSpan="4"
+                  height="44"
+                >
+                  Two Female SPs vs One Male Client
+                </td>
+              </tr>
+              <tr>
+                <td>$280</td>
+                <td>30 mins</td>
+                <td>$100 Each</td>
+                <td>$80</td>
+              </tr>
+              <tr>
+                <td>$380</td>
+                <td>45 mins</td>
+                <td>$140 Each</td>
+                <td>$100</td>
+              </tr>
+              <tr>
+                <td>$460</td>
+                <td>1 hr</td>
+                <td>$170 Each</td>
+                <td>$120</td>
+              </tr>
+              <tr className="border-t border-b">
+                <td
+                  className=""
+                  style={{ textAlign: "center" }}
+                  colSpan="4"
+                  height="44"
+                >
+                  Three Female SPs vs One Male Client
+                </td>
+              </tr>
+              <tr>
+                <td>$380</td>
+                <td>30 mins</td>
+                <td>$100 Each</td>
+                <td>$80</td>
+              </tr>
+              <tr>
+                <td>$480</td>
+                <td>45 mins</td>
+                <td>$140 Each</td>
+                <td>$100</td>
+              </tr>
+              <tr>
+                <td>$560</td>
+                <td>1 hr</td>
+                <td>$170 Each</td>
+                <td>$120</td>
               </tr>
             </tbody>
           </table>
+          <div className="text-sm">5% Surcharge for EFTPOS</div>
         </div>
       </div>
     </div>

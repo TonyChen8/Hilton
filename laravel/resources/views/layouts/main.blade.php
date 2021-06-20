@@ -1,7 +1,7 @@
 @php
 $items=[
 ['label'=>"Angel26", 'route' => 'home'],
-['label'=>"Service", 'route' => 'service'],
+['label'=>"Rate", 'route' => 'service'],
 ['label'=>"Our Ladies", 'route' => 'ladies'],
 ['label'=>"Who's On", 'route' => 'whoson'],
 ['label'=>"Contact Us", 'route' => 'contactus'],
@@ -15,31 +15,32 @@ $items=[
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Angel26</title>
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Satisfy:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="{{ mix('css/app.css') }}" rel="stylesheet" />
 </head>
 
-<body class="font-sans antialiased" style="background-color: rgba(0,0,0,0.85)">
+<body class="font-sans antialiased" style="background-color: rgba(0,0,0,1)">
   <div class="relative text-yellow">
     <!-- <img class="absolute inset-x-0 top-0" src="/bosco/background.jpg" style="z-index: -10" /> -->
     <div class="flex flex-col items-center z-10">
       <div class="flex-row items-center mt-12 sm:flex hidden" style="width: 1200px">
         <img class="cursor-pointer mr-10" src="/bosco/logo.jpg" style="width: 300px" />
         @foreach ($items as $item)
-        <div class="flex flex-col items-center relative" @if (request()->routeIs($item['route']))
-          style="background-image: url('/bosco/navcurbg.png'); background-repeat: no-repeat;"
+        <div class="flex flex-row items-center cursor-pointer mx-7">
+          @if (request()->routeIs($item['route']))
+          <img src='/bosco/navcurbgl.png' style="width: 40px; margin-right: 5px;" />
           @endif
-          >
-          <a class="cursor-pointer font-bold text-2xl mx-7 " href={{route($item['route'])}} style="padding: 20px 0;">
+          <a class="font-bold text-2xl" href={{route($item['route'])}} style="padding: 20px 0;">
             {{$item['label']}}
           </a>
+          @if (request()->routeIs($item['route']))
+          <img src='/bosco/navcurbgr.png' style="width: 40px" />
+          @endif
         </div>
         @endforeach
       </div>
-
       <div id="menu" class="w-full sm:hidden"></div>
-
       <div id="reactjs" class="w-full" style="min-height: 50vh"></div>
       <div class="w-4/5 sm:w-1/2 text-2xl mt-10">
         <table width="100%">
@@ -62,7 +63,6 @@ $items=[
       </div>
     </div>
   </div>
-
   <script src="{{ mix('js/menu.js') }}" defer></script>
   {{ $reactjs ?? "" }}
 </body>

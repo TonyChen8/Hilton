@@ -67,7 +67,7 @@
                     Email: <a style="color: lightskyblue;text-decoration: underline; margin: 6px;" href="mailto:info@angels26.com.au">info@angels26.com.au</a>
                 </div>
                 <div style="margin: 5px">
-                    Phone: <a style="color: lightskyblue;text-decoration: underline; margin: 6px;"  href="tel:0450316989">0450316989</a>
+                    Phone: <a style="color: lightskyblue;text-decoration: underline; margin: 6px;"  href="tel:0738031000">07 3803 1000</a>
                 </div>
             </div>
         </div>

@@ -9,7 +9,7 @@ function Contactus() {
       <div className="my-10 flex flex-col">
         <img
           className="h-64 w-auto object-cover sm:object-contain"
-          src="/bosco/contactus/banner.jpg"
+          src="/bosco/contactus/banner.png"
           alt=""
         />
       </div>
@@ -21,7 +21,7 @@ function Contactus() {
           >
             <Title text="Booking and Enquiries"></Title>
             <div className="mt-16 mb-5 text-white">
-              Phone No.: <span className="text-yellow ml-2">0450316989</span>
+              Phone No.: <span className="text-yellow ml-2">07 3803 1000</span>
             </div>
             <div className="mb-5 text-white">
               Our friendly staff are able to help you with any questions. To

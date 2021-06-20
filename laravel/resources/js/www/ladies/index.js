@@ -12,7 +12,7 @@ function Ladies() {
       <div className="flex flex-col sm:flex-row items-start">
         <img
           className="w-full sm:w-1/2 mb-5 rounded-xl"
-          src="/bosco/ladies/girl.jpg"
+          src="/bosco/ladies/girl.png"
           alt=""
           style={{ objectFit: "contain" }}
         />

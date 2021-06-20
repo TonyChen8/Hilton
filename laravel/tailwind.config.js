@@ -19,7 +19,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ["Nunito", ...defaultTheme.fontFamily.sans],
+        sans: ["satisfy", ...defaultTheme.fontFamily.sans],
       },
     },
   },
