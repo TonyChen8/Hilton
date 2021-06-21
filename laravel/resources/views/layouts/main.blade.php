@@ -15,7 +15,7 @@ $items=[
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Angels 26</title>
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Satisfy:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Roboto&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="{{ mix('css/app.css') }}" rel="stylesheet" />
 </head>
@@ -58,9 +58,9 @@ $items=[
           </tbody>
         </table>
       </div>
-      <div class="mt-20 p-5 w-full bg-gray-900">
+      <p class="mt-20 p-5 w-full bg-gray-900">
         <span class="font-bold text-sm text-left sm:text-lg">Copyright 2021 Angels 26, all rights reserved.</span>
-      </div>
+      </p>
     </div>
   </div>
   <script src="{{ mix('js/menu.js') }}" defer></script>

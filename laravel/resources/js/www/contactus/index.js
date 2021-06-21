@@ -20,15 +20,15 @@ function Contactus() {
             style={{ backgroundColor: "rgba(255,255,255,0.1)" }}
           >
             <Title text="Booking and Enquiries"></Title>
-            <div className="mt-16 mb-5 text-white">
+            <p className="mt-16 mb-5 text-white">
               Phone No.: <span className="text-yellow ml-2">07 3803 1000</span>
-            </div>
+            </p>
 
-            <div className="mb-3 text-white">Opening hours:</div>
+            <p className="mb-3 text-white">Opening hours:</p>
             <div>
-              <div>7 days:</div>
-              <div>Monday to Thursday: 10:00am to 1:00am.</div>
-              <div>Friday to Sunday: 10:00am to 2:00am.</div>
+              <p>7 days:</p>
+              <p>Monday to Thursday: 10:00am to 1:00am.</p>
+              <p>Friday to Sunday: 10:00am to 2:00am.</p>
             </div>
           </div>
         </div>
@@ -39,15 +39,15 @@ function Contactus() {
           >
             <Title text="OUR ADDRESS"></Title>
 
-            <div className="mt-16 mb-5 text-white">
+            <p className="mt-16 mb-5 text-white">
               <span>Address:</span>{" "}
               <span className="text-yellow">
                 26 Magnesium Drive, Crestmead QLD 4132
               </span>
-            </div>
-            <div className="text-white">
+            </p>
+            <p className="text-white">
               Plenty of private parking spaces available for clients.
-            </div>
+            </p>
           </div>
         </div>
       </div>

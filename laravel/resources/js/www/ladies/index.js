@@ -17,22 +17,22 @@ function Ladies() {
           style={{ objectFit: "contain" }}
         />
         <div className="w-full sm:w-1/2 text-white sm:ml-10">
-          <div className="mb-5">
+          <p className="mb-5">
             Our gorgeous ladies work because they want to and enjoy what they
             do.
-          </div>
-          <div className="mb-5">
+          </p>
+          <p className="mb-5">
             Our ladies pride themselves on giving a passionate and memorable
             service.
-          </div>
-          <div className="mb-5">
+          </p>
+          <p className="mb-5">
             They are self-motivated and goal-oriented and just love to tease and
             love our clients.
-          </div>
-          <div className="mb-5">
+          </p>
+          <p className="mb-5">
             Our ladies are medically fit so you can enjoy them without any
             worries in mind.
-          </div>
+          </p>
         </div>
       </div>
     </div>

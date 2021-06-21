@@ -9,7 +9,7 @@ function Home() {
       <div className="flex flex-row w-full justify-center mt-10 sm:justify-start sm:mb-80">
         <div className="flex flex-col justify-center items-center sm:items-start sm:ml-auto relative px-5 text-white">
           <h1 className="sm:text-5xl">Ph: 07 3803 1000</h1>
-          <h1 className="sm:text-2xl">26 Magnesium Dr, Crestmead QLD 4132</h1>
+          <h1 className="sm:text-2xl roboto">26 Magnesium Dr, Crestmead QLD 4132</h1>
           <img
             className="absolute top-0 right-0 w-full"
             src="/bosco/title-bg-bottom.png"

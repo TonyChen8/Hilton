@@ -57,16 +57,16 @@ function Whoson() {
                           alt=""
                         />
                       </div>
-                      <div className="text-2xl my-5">{staff.getTitle()}</div>
-                      <div className="w-11/12 text-white text-md">
+                      <p className="text-2xl my-5">{staff.getTitle()}</p>
+                      <p className="w-11/12 text-white text-md">
                         {staff.getDescription()}
-                      </div>
+                      </p>
                     </div>
                   );
                 })}
               </div>
             ) : (
-              <div className="text-2xl mt-10 text-center">No lady working today.</div>
+              <p className="text-2xl mt-10 text-center">No lady working today.</p>
             )
           ) : null}
         </div>

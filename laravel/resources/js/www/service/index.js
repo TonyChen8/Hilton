@@ -43,12 +43,12 @@ function Service() {
         >
           <Title text="our price"></Title>
           <div className="text-white mt-5">
-            <div className="mb-5">
+            <p className="mb-5">
               Our fees are payable in two parts (prices include GST):
-            </div>
-            <div>– Room Fee: Payable to Asian Star</div>
-            <div>– Service Fee: Payable to our ladies</div>– Eftpos and ATM are
-            available
+            </p>
+            <p>– Room Fee: Payable to Asian Star</p>
+            <p>– Service Fee: Payable to our ladies</p>
+            <p>– Eftpos and ATM are available</p>
           </div>
         </div>
 
@@ -56,7 +56,7 @@ function Service() {
           className="p-6 mx-2 mt-3 text-xs sm:text-xl text-white mt-8"
           style={{ backgroundColor: "rgba(255,255,255,0.1)" }}
         >
-          <table border="0" width="100%" cellSpacing="0" cellPadding="5">
+          <table className="roboto" border="0" width="100%" cellSpacing="0" cellPadding="5">
             <thead>
               <tr>
                 <th className="text-left" width="185" height="54">
@@ -178,7 +178,7 @@ function Service() {
               </tr>
             </tbody>
           </table>
-          <div className="text-sm">5% Surcharge for EFTPOS</div>
+          <p className="text-sm">5% Surcharge for EFTPOS</p>
         </div>
       </div>
     </div>
