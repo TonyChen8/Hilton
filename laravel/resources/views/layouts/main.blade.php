@@ -1,6 +1,6 @@
 @php
 $items=[
-['label'=>"Angel26", 'route' => 'home'],
+['label'=>"Angels 26", 'route' => 'home'],
 ['label'=>"Rate", 'route' => 'service'],
 ['label'=>"Our Ladies", 'route' => 'ladies'],
 ['label'=>"Who's On", 'route' => 'whoson'],
@@ -13,7 +13,7 @@ $items=[
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Angel26</title>
+  <title>Angels 26</title>
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Satisfy:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -59,7 +59,7 @@ $items=[
         </table>
       </div>
       <div class="mt-20 p-5 w-full bg-gray-900">
-        <span class="font-bold text-sm text-left sm:text-lg">Copyright 2021 Angel26, all rights reserved.</span>
+        <span class="font-bold text-sm text-left sm:text-lg">Copyright 2021 Angels 26, all rights reserved.</span>
       </div>
     </div>
   </div>

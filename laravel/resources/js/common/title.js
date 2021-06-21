@@ -6,7 +6,7 @@ export default function Title({ text }) {
       className="text-3xl text-center bg-no-repeat bg-bottom bg-cover sm:bg-auto sm:bg-right-bottom sm:text-right"
       style={{
         backgroundImage:'url("/bosco/title-bg-bottom.png")',
-        height: "100px",
+        height: "60px",
         textTransform: "uppercase",
         marginTop: "0px",
       }}

@@ -26,76 +26,32 @@ function Home() {
         />
       </div>
 
+      <div className="w-full flex flex-col items-center">
+        <div className="mt-12 p-4" style={{maxWidth: "768px"}}>
+          <h1 className="text-3xl text-center">
+            Welcome to Angels 26! Brisbane’s best Brothel
+          </h1>
+          <p className="text-center mx-auto max-w-full">
+            <strong>
+              Welcome to Angels 26, one of famous brothels with 20 years’ history
+              in Brisbane and Logan area. We offer some of the best full-adult
+              services available in Logan at very competitive prices. Recently our
+              brothel is under new management and certainly, we are always
+              respected as a nice and tidy brothel. Come in and forget the world
+              outside with our beautiful girls. Let the girls make your day or
+              night special, as you slip into a haven of pleasure, erotica, and
+              relaxation.
+            </strong>
+          </p>
 
-      <div className="mt-12 p-4">
-        <h1 className="text-3xl text-center">
-          Welcome to Asian Star! Brisbane’s best Brothel
-        </h1>
-        <p className="text-center w-1/2 mx-auto max-w-full">
-          <strong>
-            Welcome to Asian Star! Brisbane’s best Asian Brothel. We have a wide
-            range of ladies from China, Korea, Japan, Singapore, Thailand,
-            Vietnam and other countries. However, we are not just limited to
-            Asian ladies as we do welcome nice ladies from other nationalities.
-            Our specialty we provide is our beautiful quality of ladies and the
-            good services they offer you.
-          </strong>
-        </p>
-        <h2
-          data-fontsize="36"
-          data-inline-fontsize="true"
-          data-inline-lineheight="true"
-          data-lineheight="54"
-          className="text-2xl text-center mb-2 mt-3"
-        >
-          We are open!
-        </h2>
-        <p className="text-center">
-          <b>
-            However, there are certain rules to follow based on COVID Safe sex
-            industry plan, please follow the rules and keep us all safe：
-          </b>
-        </p>
-        <p className="text-center">
-          <b>
-            Stay home if you feel unwell, you will be refused to stay if you are
-            unwell
-          </b>
-        </p>
-        <p className="text-center">
-          <b>Practice Social distancing</b>
-        </p>
-        <p className="text-center">
-          <b>
-            Wash hand or using alcohol-based hand sanitizer ( will be provided
-            here) upon arrival
-          </b>
-        </p>
-        <p className="text-center">
-          <b>
-            You will be asked to provide contact details for contact tracing and
-            we will keep it confidential and destroy after certain time;
-          </b>
-        </p>
-        <p className="text-center">
-          <b>
-            Our premises will be limited to 20 people at a time; please try not
-            to come in group; you may be asked to wait outside if we reach
-            limitation;
-          </b>
-        </p>
-        <p className="text-center">
-          <b>
-            We will perform more strict hygiene and sanitizing method which may
-            cause longer waiting time; please be patient and understandable;
-          </b>
-        </p>
-        <p className="text-center">
-          <b>Fri and Sat nights we will closed at 3am instead of 4am</b>
-        </p>
-        <p className="text-center">
-          <b>Stay safe and hope see you again soon!</b>
-        </p>
+          <p className="text-center mt-10">
+            <b>
+              Our sensational ladies from Australia and Asia are here to make
+              every fantasy of yours a reality and give you an experience that
+              will make you anticipate returning for more.
+            </b>
+          </p>
+        </div>
       </div>
     </div>
   );

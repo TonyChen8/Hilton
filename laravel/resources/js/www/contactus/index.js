@@ -23,24 +23,12 @@ function Contactus() {
             <div className="mt-16 mb-5 text-white">
               Phone No.: <span className="text-yellow ml-2">07 3803 1000</span>
             </div>
-            <div className="mb-5 text-white">
-              Our friendly staff are able to help you with any questions. To
-              find out who are the ladies working today, please check{" "}
-              <a className="text-yellow" href="/whoson">
-                "Who's On"
-              </a>{" "}
-              page. To find out when your favorite ladies will come back to
-              Asian Star, please check{" "}
-              <a className="text-yellow" href="/Ladies">
-                “Our Ladies”
-              </a>{" "}
-              page.
-            </div>
+
             <div className="mb-3 text-white">Opening hours:</div>
             <div>
               <div>7 days:</div>
-              <div>Sunday to Thursday: 9:30am to 2 am.</div>
-              <div>Friday and Saturday 9:30am to 3am.</div>
+              <div>Monday to Thursday: 10:00am to 1:00am.</div>
+              <div>Friday to Sunday: 10:00am to 2:00am.</div>
             </div>
           </div>
         </div>
@@ -51,16 +39,14 @@ function Contactus() {
           >
             <Title text="OUR ADDRESS"></Title>
 
-            <div className="mt-16 text-yellow mb-5">
-              Address: 26 Magnesium Dr, Crestmead QLD 4132
+            <div className="mt-16 mb-5 text-white">
+              <span>Address:</span>{" "}
+              <span className="text-yellow">
+                26 Magnesium Drive, Crestmead QLD 4132
+              </span>
             </div>
             <div className="text-white">
-              We are the front unit of 26 Magnesium Dr. Plenty of parking spaces
-              are available at the front of our premises, where Asian Star car
-              parking sign is displayed and we also provide discreet parking
-              which is located on the left hand side of the driveway where the“
-              Asian Star Garage” sign is displayed. Entry door from garage to
-              the premises is available.
+              Plenty of private parking spaces available for clients.
             </div>
           </div>
         </div>

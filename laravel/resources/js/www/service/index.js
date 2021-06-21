@@ -22,13 +22,15 @@ function Service() {
 
           <div className="text-white mt-5">
             <p className="mb-5">
-              All our ladies undergo compulsory health checks and only perform
-              safe sex practices here at Asian Star.
+              Our ladies provide the standard services to client, please be
+              advised that you will need to discuss with your chosen companion
+              for the available services that they could offer as some may not
+              perform certain special requests.
             </p>
             <p>
-              If you would like to fulfill your fantasies or it is a different
-              kind of service you desire, please feel free to drop by to have a
-              chat with our friendly ladies.
+              All of our ladies are professionals however they are not obliged
+              to perform any service that they are not willing to provide. We
+              thank you for your understanding in this matter.
             </p>
           </div>
         </div>

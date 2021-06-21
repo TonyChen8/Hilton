@@ -9,45 +9,29 @@ function Ladies() {
       <div className="w-full mb-10">
         <Title text="our ladies"></Title>
       </div>
-      <div className="flex flex-col sm:flex-row items-start">
+      <div className="flex flex-col sm:flex-row items-start justify-center">
         <img
-          className="w-full sm:w-1/2 mb-5 rounded-xl"
+          className="w-full sm:w-1/3 mb-5 rounded-xl"
           src="/bosco/ladies/girl.png"
           alt=""
           style={{ objectFit: "contain" }}
         />
         <div className="w-full sm:w-1/2 text-white sm:ml-10">
           <div className="mb-5">
-            Asian Star is one of the best brothels in Brisbane. We are famous of
-            having a variety of most beautiful ladies from different countries.
+            Our gorgeous ladies work because they want to and enjoy what they
+            do.
           </div>
           <div className="mb-5">
-            Queensland law requires a limit number of ladies to work per shift.
-            We usually have 6-8 ladies working every day. As we change our
-            ladies very often, please check “who is on ” page to find out which
-            ladies working today.
+            Our ladies pride themselves on giving a passionate and memorable
+            service.
           </div>
           <div className="mb-5">
-            This page are the popular ladies who will be working at Asian Star
-            soon!
+            They are self-motivated and goal-oriented and just love to tease and
+            love our clients.
           </div>
-
-          <div className="mb-5 flex flex-row">
-            More information please visit
-            <a href="https://twitter.com/" className="ml-3">
-              <img
-                loading="lazy"
-                class="alignnone size-full wp-image-26"
-                src="/bosco/icontwitter.png"
-                alt=""
-                width="25"
-                height="auto"
-              />
-            </a>
-          </div>
-          <div>
-            Note: To protect our ladie’s privacy, images of them are not real
-            but similar ones unless specified
+          <div className="mb-5">
+            Our ladies are medically fit so you can enjoy them without any
+            worries in mind.
           </div>
         </div>
       </div>
