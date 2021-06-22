@@ -58,9 +58,14 @@ $items=[
           </tbody>
         </table>
       </div>
-      <p class="mt-20 p-5 w-full bg-gray-900">
-        <span class="font-bold text-sm text-left sm:text-lg">Copyright 2021 Angels 26, all rights reserved.</span>
-      </p>
+      <div class="mt-20 p-5 w-full bg-gray-900 flex flex-row items-center">
+        <p class="font-bold text-sm text-left sm:text-lg">Copyright 2021 Angels 26, all rights reserved.</p>
+        <div class="ml-auto flex flex-row items-center ">
+          <a target="_blank" href="https://www.facebook.com/profile.php?id=100068970708837"><img class="h-9 mx-5" src="/bosco/fb.png" alt=""></a>
+          <a target="_blank" href="https://twitter.com/Angels26Qld"><img class="h-9 mx-5" src="/bosco/tiwwer.png" alt=""></a>
+          <a target="_blank" href="https://www.instagram.com/angels26qld/?utm_medium=copy_link"><img class="h-9 mx-5" src="/bosco/ig.png" alt=""></a>
+        </div>
+      </div>
     </div>
   </div>
   <script src="{{ mix('js/menu.js') }}" defer></script>
