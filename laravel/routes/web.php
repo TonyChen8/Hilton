@@ -38,12 +38,12 @@ Route::group(
 	}
 );
 
-Route::group(['domain' => 'test.angels26.com.au'], function () {
+Route::group(['domain' => 'www.angels26.com.au'], function () {
 	require __DIR__ . '/home.php';
 });
 
-Route::group(['domain' => 'www.angels26.com.au'], function () {
-	Route::get('/', function () {
-		return view('welcome');
-	});
-});
+// Route::group(['domain' => 'www.angels26.com.au'], function () {
+// 	Route::get('/', function () {
+// 		return view('welcome');
+// 	});
+// });
