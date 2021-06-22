@@ -27,8 +27,8 @@ function Contactus() {
             <p className="mb-3 text-white">Opening hours:</p>
             <div>
               <p>7 days:</p>
-              <p>Monday to Thursday: 10:00am to 1:00am.</p>
-              <p>Friday to Sunday: 10:00am to 2:00am.</p>
+              <p>Sunday to Thursday: 10:00am to 2:00am.</p>
+              <p>Friday to Saturday: 10:00am to 4:00am.</p>
             </div>
           </div>
         </div>
