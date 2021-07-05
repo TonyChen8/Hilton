@@ -47,7 +47,8 @@ function Whoson() {
                     >
                       <div className="relative">
                         <img
-                          className="w-60 h-72 p-3"
+                          style={{width: "240px", height: "480px"}}
+                          className="p-3"
                           src={staff.getImage(true)}
                           alt=""
                         />
