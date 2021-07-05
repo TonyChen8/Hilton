@@ -53,7 +53,8 @@ function Whoson() {
                           alt=""
                         />
                         <img
-                          className="absolute top-0 left-0 w-60 h-72"
+                          style={{width: "240px", height: "480px"}}
+                          className="absolute top-0 left-0"
                           src="/bosco/whoson/frame.png"
                           alt=""
                         />
