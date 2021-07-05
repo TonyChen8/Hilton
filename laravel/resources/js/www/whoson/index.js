@@ -47,14 +47,13 @@ function Whoson() {
                     >
                       <div className="relative">
                         <img
-                          style={{width: "240px", height: "480px"}}
-                          className="p-3"
+                          style={{width: "240px", height: "480px", padding: "24px 12px"}}
                           src={staff.getImage(true)}
                           alt=""
                         />
                         <img
-                          style={{width: "240px", height: "480px"}}
-                          className="absolute top-0 left-0"
+                          style={{width: "240px", height: "464px", top: "8px"}}
+                          className="absolute left-0"
                           src="/bosco/whoson/frame.png"
                           alt=""
                         />
