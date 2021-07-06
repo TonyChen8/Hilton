@@ -13,6 +13,7 @@ const mix = require("laravel-mix");
 
 mix.js("resources/js/admin/staffs/index.js", "public/js/staffs.js").react();
 mix.js("resources/js/admin/schedule/index.js", "public/js/schedule.js").react();
+mix.js("resources/js/admin/notices/index.js", "public/js/notices.js").react();
 
 mix.js("resources/js/www/home/index.js", "public/js/home.js").react();
 mix.js("resources/js/www/service/index.js", "public/js/service.js").react();
@@ -32,6 +33,6 @@ mix.postCss("resources/css/app.css", "public/css", [require("tailwindcss")]);
 mix.browserSync({
   open: 'external',
   host: 'localhost',
-  proxy: "http://test.angels26.com.au:8000/",
+  proxy: "http://localhost:8000/notices",
   // proxy: "http://admin.angels26.com.au:8000/",
 });

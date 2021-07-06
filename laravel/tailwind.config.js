@@ -21,6 +21,9 @@ module.exports = {
       fontFamily: {
         sans: ["satisfy", ...defaultTheme.fontFamily.sans],
       },
+      maxWidth: {
+       '80v': '80vw',
+      }
     },
   },
 
