@@ -63,7 +63,7 @@ function Home() {
 
   return (
     <div className="w-full">
-      <div className="flex flex-row w-full justify-center mt-10 sm:justify-start sm:absolute top-32 -z-10">
+      <div className="flex flex-row w-full justify-center mt-10 sm:justify-start">
         <div className="flex flex-col justify-center items-center sm:items-start sm:ml-auto relative px-5 text-white">
           <h1 className="sm:text-5xl">Ph: 07 3803 1000</h1>
           <h1 className="sm:text-5xl">SMS: 04 5031 6989</h1>
@@ -79,12 +79,11 @@ function Home() {
       </div>
 
       <div className="w-full flex-col flex object-cove items-center mt-16 sm:mt-1">
-        <div className="mb-10 px-10">
-          {notices &&
-            notices.length > 0 &&
-            notices.map((notice, index) => {
+        {notices && notices.length > 0 && (
+          <div className="mb-10 px-10 border w-11/12 p-5 m-5" style={{ maxWidth: "768px" }}>
+            {notices.map((notice, index) => {
               return (
-                <div key={index} className="text-white flex-row flex center">
+                <div key={index} className="text-white flex-row flex center text-xl">
                   <p
                     className="cursor-pointer underline"
                     onClick={() => onShowNoticeDetails(notice)}
@@ -94,7 +93,8 @@ function Home() {
                 </div>
               );
             })}
-        </div>
+          </div>
+        )}
         <img
           className="w-full h-auto max-w-3xl"
           src="/bosco/bg-girl.png"
