@@ -3,7 +3,7 @@ $items=[
 ['label'=>"Angels 26", 'route' => 'home'],
 ['label'=>"Rate", 'route' => 'service'],
 ['label'=>"Our Ladies", 'route' => 'ladies'],
-['label'=>"Who's On", 'route' => 'whoson'],
+['label'=>"Roster", 'route' => 'whoson'],
 ['label'=>"Contact Us", 'route' => 'contactus'],
 ];
 @endphp

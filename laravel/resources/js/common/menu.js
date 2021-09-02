@@ -51,8 +51,8 @@ export default function Menu() {
           <a className="py-3" href="/ladies">
             Ladies
           </a>
-          <a className="py-3" href="/whoson">
-            Who's on
+          <a className="py-3" href="/roster">
+            Roster
           </a>
           <a className="py-3" href="/contact">
             Contact Us

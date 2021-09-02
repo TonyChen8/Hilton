@@ -1,3 +1,5 @@
+import moment from "moment";
+
 export default class Staff {
   constructor({
     id = 0,
@@ -43,8 +45,8 @@ export default class Staff {
   setSchedule(day = 0, select = true) {
     this.schedule[day] = select;
   }
-  isWorkingToday() {
-    let today = new Date().getDay();
+  isWorkingToday(day = null) {
+    let today = day ? moment(day).format('e') : moment().format('e');
     const days = [6, 0, 1, 2, 3, 4, 5];
 
     return this.schedule[days[today]] == true;

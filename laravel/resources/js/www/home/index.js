@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import Modal from "react-modal";
 import axios from "axios";
 
-import { AiOutlineCloseCircle } from "react-icons/Ai";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 import Title from "../../common/title";
 import Notice from "../../models/notice";
