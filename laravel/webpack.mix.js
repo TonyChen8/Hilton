@@ -33,6 +33,6 @@ mix.postCss("resources/css/app.css", "public/css", [require("tailwindcss")]);
 mix.browserSync({
   open: 'external',
   host: 'localhost',
-  proxy: "http://localhost:8000/notices",
+  proxy: "http://localhost:8000",
   // proxy: "http://admin.angels26.com.au:8000/",
 });
