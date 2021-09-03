@@ -1,9 +1,29 @@
 version: "3"
 services:
+
+  #PHP Service
+  staging-app:
+    build:
+      context: ./laravel
+      dockerfile: Dockerfile
+    image: php:7.4
+    container_name: staging-app
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: staging-app
+      SERVICE_TAGS: prod
+    working_dir: /var/www
+    volumes:
+      - ./laravel:/var/www
+      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - hilton_app-network
+
   #Nginx Service
-  stagingNginx:
+  staging-nginx:
     image: nginx:alpine
-    container_name: stagingNginx
+    container_name: staging-nginx
     restart: unless-stopped
     tty: true
     ports:
@@ -11,10 +31,10 @@ services:
       - "8443:443"
     volumes:
       - ./laravel:/var/www
-      - ./nginx/conf.d/:/etc/nginx/conf.d/
+      - ./nginx/staging.conf.d/:/etc/nginx/conf.d/
     networks:
       - hilton_app-network
-      
+
 #Docker Networks
 networks:
   hilton_app-network:
