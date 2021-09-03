@@ -1,0 +1,45 @@
+version: "3"
+services:
+  #Nginx Service
+  stagingNginx:
+    image: nginx:alpine
+    container_name: stagingNginx
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8080:80"
+      - "8443:443"
+    volumes:
+      - ./laravel:/var/www
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - hilton_app-network
+
+  #MySQL Service
+  stagingDB:
+    image: mysql:5.7.22
+    container_name: stagingDB
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8306:3306"
+    environment:
+      MYSQL_DATABASE: angel26
+      MYSQL_ROOT_PASSWORD: tcl@1234
+      SERVICE_TAGS: prod
+      SERVICE_NAME: mysql
+    volumes:
+      - stagingDBData:/var/lib/mysql
+      - ./mysql/my.cnf:/etc/mysql/my.cnf
+    networks:
+      - hilton_app-network
+
+#Docker Networks
+networks:
+  hilton_app-network:
+    external: true
+
+#Volumes
+volumes:
+  stagingDBData:
+    driver: local
