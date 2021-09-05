@@ -13,7 +13,6 @@ function Ladies() {
       setStaffs(
         res.data
           .map((staff) => new Staff(staff))
-          // .filter((staff) => staff.isWorkingToday())
       );
     } else {
       alert(

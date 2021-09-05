@@ -13,10 +13,7 @@ function Whoson() {
   async function getAllStaffs() {
     let res = await axios.get("/staffs");
     if (res && res.data) {
-      setStaffs(
-        res.data.map((staff) => new Staff(staff))
-        // .filter((staff) => staff.isWorkingToday())
-      );
+      setStaffs(res.data.map((staff) => new Staff(staff)));
     } else {
       alert(
         "Cannot fetch ladies' information. Please try to refresh this page."
@@ -38,21 +35,19 @@ function Whoson() {
     moment().add(6, "days"),
   ];
 
-  let columns = [];
+  let dayShift = [];
+  let nightShift = [];
+
   if (staffs && staffs.length) {
     //prepare data for every column
     for (let i = 0; i < days.length; i++) {
-      columns[i] = [];
+      dayShift[i] = [];
+      nightShift[i] = [];
       for (let m = 0; m < staffs.length; m++) {
-        staffs[m].isWorkingToday(days[i]) &&
-          columns[i].push(staffs[m].getTitle());
-      }
-    }
+        staffs[m].isDayShift(days[i]) && dayShift[i].push(staffs[m].getTitle());
 
-    // add placeholder
-    for (let i = 0; i < days.length; i++) {
-      for (let m = columns[i].length; m < staffs.length; m++) {
-        columns[i].push(<div>&nbsp;</div>);
+        staffs[m].isNightShift(days[i]) &&
+          nightShift[i].push(staffs[m].getTitle());
       }
     }
   }
@@ -64,21 +59,118 @@ function Whoson() {
           <Title text="Roster"></Title>
         </div>
 
-        <div className="w-full max-w-5xl text-white text-xl roboto flex flex-row text-xl">
+        <table className="w-full max-w-5xl text-white text-xl roboto hidden sm:table">
+          <thead>
+            <tr>
+              <td className="border"></td>
+              {days.map((day, index) => {
+                return (
+                  <td key={index} className="border text-center">
+                    {day.format("ddd")}
+                    <br />
+                    {day.format("D/M")}
+                  </td>
+                );
+              })}
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="border text-center">
+                Day
+                <br />
+                (10AM - 6PM)
+              </td>
+              {days.map((day, index) => {
+                return (
+                  <td key={index} className="border text-center">
+                    {dayShift.length > 0 &&
+                      dayShift[index].map((column, index) => {
+                        return (
+                          <div key={index} className="py-2">
+                            {column}
+                          </div>
+                        );
+                      })}
+                  </td>
+                );
+              })}
+            </tr>
+
+            <tr>
+              <td className="border text-center">
+                Night
+                <br />
+                (6PM - Late)
+              </td>
+              {days.map((day, index) => {
+                return (
+                  <td key={index} className="border text-center">
+                    {nightShift.length > 0 &&
+                      nightShift[index].map((column, index) => {
+                        return (
+                          <div key={index} className="py-2">
+                            {column}
+                          </div>
+                        );
+                      })}
+                  </td>
+                );
+              })}
+            </tr>
+          </tbody>
+        </table>
+
+        <div className="w-full max-w-5xl text-white roboto flex flex-col text-xl sm:hidden">
           {staffs && staffs.length > 0
             ? days.map((day, index) => {
                 return (
-                  <div key={index} className="flex flex-col flex-auto">
-                    <div className="border text-center py-5">
-                      {day.format("ddd D/M")}
-                    </div>
-
-                    <div className="border text-center py-3">
-                      {columns[index].map((column, index) => {
-                        return <div key={index} className="py-2">{column}</div>;
-                      })}
-                    </div>
-                  </div>
+                  <table key={index} className="mb-10">
+                    <thead>
+                      <tr>
+                        <td className="border"></td>
+                        <td className="border text-center">
+                          {day.format("ddd")}
+                          <br />
+                          {day.format("D/M")}
+                        </td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="border text-center">
+                          Day
+                          <br />
+                          (10AM - 6PM)
+                        </td>
+                        <td className="border text-center">
+                          {dayShift[index].map((column, index) => {
+                            return (
+                              <div key={index} className="py-2">
+                                {column}
+                              </div>
+                            );
+                          })}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="border text-center">
+                          Night
+                          <br />
+                          (6PM - Late)
+                        </td>
+                        <td className="border text-center">
+                          {nightShift[index].map((column, index) => {
+                            return (
+                              <div key={index} className="py-2">
+                                {column}
+                              </div>
+                            );
+                          })}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 );
               })
             : null}

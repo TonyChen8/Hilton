@@ -39,7 +39,11 @@ function Calendar() {
   }, []);
 
   async function selectDay(staff, index) {
-    staff.setSchedule(index, !staff.getSchedule(false, index));
+    staff.setSchedule(index, 1);
+    setStaffs([...staffs]);
+  }
+  async function selectNight(staff, index) {
+    staff.setSchedule(index, 10);
     setStaffs([...staffs]);
   }
 
@@ -53,7 +57,7 @@ function Calendar() {
             return {
               id: staff.getId(),
               schedules: days.map((day, index) =>
-                staff.getSchedule(false, index)
+                staff.getSchedule(index)
               ),
             };
           }),
@@ -68,7 +72,7 @@ function Calendar() {
       }
     } catch (e) {
       console.log("/laravel/resources/js/admin/schedule/calendar.js:62", e);
-       container.current.error(
+      container.current.error(
         `Cannot save all staffs' schedules.`,
         `Please refresh this page.`,
         {
@@ -79,10 +83,11 @@ function Calendar() {
   }
 
   return (
-    <div className="flex flex-col h-full bg-white p-8 min-w-xl w-full rounded-md">
+    <div className="flex flex-col h-full bg-white p-8 min-w-xl w-full rounded-md overflow-y-auto">
       <table className="table-fixed mb-16">
         <thead>
           <tr>
+            <th className="w-1/12"></th>
             <th className="w-1/12"></th>
             {days.map((day, index) => {
               return (
@@ -98,6 +103,15 @@ function Calendar() {
             return (
               <tr key={index}>
                 <td className="border text-center">{staff.getName()}</td>
+                <td className="border text-center">
+                  <div className="cursor-pointer w-full h-12 flex flex-row items-center p-1">
+                    <div className="text-xl text-gray-600">Day</div>
+                  </div>
+
+                  <div className="cursor-pointer w-full h-12 flex flex-row items-center p-1 bg-gray-400">
+                    <div className="text-xl text-gray-600">Night</div>
+                  </div>
+                </td>
                 {days.map((day, index) => {
                   return (
                     <td key={index} className="border text-center">
@@ -105,7 +119,16 @@ function Calendar() {
                         className="cursor-pointer w-full h-12 flex flex-row items-center justify-center"
                         onClick={(e) => selectDay(staff, index)}
                       >
-                        {staff.getSchedule(false, index) && (
+                        {staff.getDaySchedule(index) && (
+                          <AiOutlineCheck></AiOutlineCheck>
+                        )}
+                      </div>
+
+                      <div
+                        className="cursor-pointer w-full h-12 flex flex-row items-center justify-center bg-gray-400"
+                        onClick={(e) => selectNight(staff, index)}
+                      >
+                        {staff.getNightSchedule(index) && (
                           <AiOutlineCheck></AiOutlineCheck>
                         )}
                       </div>

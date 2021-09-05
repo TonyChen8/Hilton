@@ -12,7 +12,7 @@ $items=[
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>Angels 26</title>
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Roboto&display=swap" rel="stylesheet" />
