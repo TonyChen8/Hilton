@@ -24,7 +24,7 @@ function Whoson() {
   useEffect(() => {
     getAllStaffs();
   }, []);
-debugger;
+
   let days = [
     moment().startOf('week').add(1, "days"),
     moment().startOf('week').add(2, "days"),
