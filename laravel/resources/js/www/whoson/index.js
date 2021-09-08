@@ -24,15 +24,15 @@ function Whoson() {
   useEffect(() => {
     getAllStaffs();
   }, []);
-
+debugger;
   let days = [
-    moment(),
-    moment().add(1, "days"),
-    moment().add(2, "days"),
-    moment().add(3, "days"),
-    moment().add(4, "days"),
-    moment().add(5, "days"),
-    moment().add(6, "days"),
+    moment().startOf('week').add(1, "days"),
+    moment().startOf('week').add(2, "days"),
+    moment().startOf('week').add(3, "days"),
+    moment().startOf('week').add(4, "days"),
+    moment().startOf('week').add(5, "days"),
+    moment().startOf('week').add(6, "days"),
+    moment().startOf('week').add(7, "days"),
   ];
 
   let dayShift = [];
