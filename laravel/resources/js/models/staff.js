@@ -19,7 +19,7 @@ export default class Staff {
       const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
       this.schedule = days.map((day) => isNaN(parseInt(schedule[day])) ? 0 : parseInt(schedule[day]));
     } else {
-      this.schedule = this.schedule ? [...schedule] : [];
+      this.schedule = [0,0,0,0,0,0,0];
     }
   }
 
