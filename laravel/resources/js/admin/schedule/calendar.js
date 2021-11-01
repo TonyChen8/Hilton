@@ -15,10 +15,10 @@ function Calendar() {
   async function getAllStaffs() {
     try {
       let res = await axios.get("/staffs");
-      console.log(
-        "/Hilton/laravel/resources/js/admin/schedule/calendar.js:15",
-        res
-      );
+      // console.log(
+      //   "/Hilton/laravel/resources/js/admin/schedule/calendar.js:15",
+      //   res
+      // );
       if (res && res.data) {
         setStaffs(res.data.map((item) => new Staff(item)));
       }
@@ -49,6 +49,20 @@ function Calendar() {
 
   const days = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
 
+  function clearSchedule() {
+    try {
+      if (staffs.length > 0) {
+        staffs.forEach((staff) => {
+          staff.clearSchedule();
+        });
+        setStaffs([...staffs]);
+      }
+
+    } catch (e) {
+      console.log("/laravel/resources/js/admin/schedule/calendar.js:62", e);
+    }
+  }
+
   async function saveSchedule(item) {
     try {
       if (staffs.length > 0) {
@@ -56,9 +70,7 @@ function Calendar() {
           schedules: staffs.map((staff) => {
             return {
               id: staff.getId(),
-              schedules: days.map((day, index) =>
-                staff.getSchedule(index)
-              ),
+              schedules: days.map((day, index) => staff.getSchedule(index)),
             };
           }),
         });
@@ -143,11 +155,19 @@ function Calendar() {
 
       <div className="flex flex-row flex-1 items-center justify-center">
         {staffs.length > 0 ? (
-          <div
-            className="bg-blue-400 ml-auto text-white rounded text-center cursor-pointer py-1 px-8"
-            onClick={saveSchedule}
-          >
-            Save Schedule
+          <div className="flex flex-row">
+            <div
+              className="bg-red-400 ml-auto text-white rounded text-center cursor-pointer py-1 px-8 mx-10"
+              onClick={clearSchedule}
+            >
+              Clear Schedule
+            </div>
+            <div
+              className="bg-blue-400 ml-auto text-white rounded text-center cursor-pointer py-1 px-8"
+              onClick={saveSchedule}
+            >
+              Save Schedule
+            </div>
           </div>
         ) : (
           <div className="text-3xl">You have to add a staff first.</div>

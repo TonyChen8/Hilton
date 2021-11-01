@@ -84,12 +84,12 @@ function Service() {
                 One Female SP vs One Male Client
                 </td>
               </tr>
-              <tr><td>$120</td> <td>20 mins </td> <td>$60  </td> <td> $60  </td> </tr>
-              <tr><td>$140</td> <td>30 mins </td> <td>$75  </td> <td> $65  </td> </tr>
-              <tr><td>$190</td> <td>45 mins </td> <td>$100 </td> <td> $90  </td> </tr>
-              <tr><td>$240</td> <td>1 hr    </td> <td>$130 </td> <td> $110 </td> </tr>
-              <tr><td>$340</td> <td>90 mins </td> <td>$190 </td> <td> $150 </td> </tr>
-              <tr><td>$440</td> <td>120 mins</td> <td>$240 </td> <td> $200 </td> </tr>
+              <tr><td>$130</td> <td>20 mins </td> <td>$65  </td> <td> $65  </td> </tr>
+              <tr><td>$150</td> <td>30 mins </td> <td>$75  </td> <td> $75  </td> </tr>
+              <tr><td>$200</td> <td>45 mins </td> <td>$100 </td> <td> $100  </td> </tr>
+              <tr><td>$250</td> <td>1 hr    </td> <td>$130 </td> <td> $120 </td> </tr>
+              <tr><td>$350</td> <td>90 mins </td> <td>$190 </td> <td> $160 </td> </tr>
+              <tr><td>$450</td> <td>120 mins</td> <td>$240 </td> <td> $210 </td> </tr>
 
               <tr className="border-t border-b">
                 <td
@@ -101,8 +101,8 @@ function Service() {
                   Two Female SPs vs One Male Client
                 </td>
               </tr>
-              <tr><td>$280  </td> <td>30 mins</td> <td>$80 Each  </td> <td>$120</td> </tr>
-              <tr><td>$380  </td> <td>45 mins</td> <td>$110 Each </td> <td>$160</td> </tr>
+              <tr><td>$290  </td> <td>30 mins</td> <td>$80 Each  </td> <td>$130</td> </tr>
+              <tr><td>$390  </td> <td>45 mins</td> <td>$110 Each </td> <td>$170</td> </tr>
               <tr><td>$480  </td> <td>1 hr   </td> <td>$140 Each </td> <td>$200</td> </tr>
 
               <tr className="border-t border-b">

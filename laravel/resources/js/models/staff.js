@@ -17,9 +17,11 @@ export default class Staff {
     if (schedule && schedule.staff_id > 0) {
       // data from api
       const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
-      this.schedule = days.map((day) => isNaN(parseInt(schedule[day])) ? 0 : parseInt(schedule[day]));
+      this.schedule = days.map((day) =>
+        isNaN(parseInt(schedule[day])) ? 0 : parseInt(schedule[day])
+      );
     } else {
-      this.schedule = [0,0,0,0,0,0,0];
+      this.schedule = [0, 0, 0, 0, 0, 0, 0];
     }
   }
 
@@ -69,7 +71,9 @@ export default class Staff {
         break;
     }
   }
-
+  clearSchedule() {
+    this.schedule = [0, 0, 0, 0, 0, 0, 0];
+  }
   isDayShift(day = null) {
     let shiftDay = day ? moment(day).format("e") : moment().format("e");
     const days = [6, 0, 1, 2, 3, 4, 5];
