@@ -33,6 +33,7 @@ function Home() {
   const [notices, setNotices] = useState(null);
   const [schedules, setSchedules] = useState([]);
   const [modalIsOpen, setIsOpen] = useState(false);
+  const [modalR18Warning, showR18Warning] = useState(true);
   const [modalContent, setModalContent] = useState(new Notice({}));
 
   async function getAllNotices() {
@@ -80,10 +81,16 @@ function Home() {
 
       <div className="w-full flex-col flex object-cove items-center mt-16 sm:mt-1">
         {notices && notices.length > 0 && (
-          <div className="mb-10 px-10 border w-11/12 p-5 m-5" style={{ maxWidth: "768px" }}>
+          <div
+            className="mb-10 px-10 border w-11/12 p-5 m-5"
+            style={{ maxWidth: "768px" }}
+          >
             {notices.map((notice, index) => {
               return (
-                <div key={index} className="text-white flex-row flex center text-xl">
+                <div
+                  key={index}
+                  className="text-white flex-row flex center text-xl"
+                >
                   <p
                     className="cursor-pointer underline"
                     onClick={() => onShowNoticeDetails(notice)}
@@ -150,6 +157,48 @@ function Home() {
 
           <p className="font-bold text-2xl mb-10">{modalContent.getTitle()}</p>
           <p className="text-sm">{modalContent.getDescription()}</p>
+        </div>
+      </Modal>
+
+      <Modal
+        isOpen={modalR18Warning}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={() => {}}
+        style={customStyles}
+        contentLabel="Notice"
+      >
+        <div className="flex flex-col max-w-80v sm:max-w-2xl items-center">
+          <p className="font-bold text-2xl mb-10 text-center">
+            Welcome To Angels26
+          </p>
+          <p className="text-sm" style={{ marginBottom: "32px" }}>
+            This restricted website is NOT suitable for viewing by people under
+            18 years.
+          </p>
+
+          <button
+            className="rounded-full bg-black text-sm"
+            onClick={() => showR18Warning(false)}
+            style={{
+              width: "320px",
+              color: "#F9C200",
+              padding: "5px",
+              margin: "32px",
+            }}
+          >
+            <p>ENTER NOW.</p>
+            <p>I am over 18 years old</p>
+          </button>
+          <button
+            onClick={() => {
+              var win = window.open("about:blank", "_self");
+              win.close();
+            }}
+            className="underline text-sm"
+            style={{ width: "320px" }}
+          >
+            <p>I am under 18 years old</p>
+          </button>
         </div>
       </Modal>
     </div>
