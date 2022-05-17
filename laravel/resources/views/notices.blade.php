@@ -11,9 +11,9 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/toastr.css') }}">
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}?ver={{(new DateTime())->getTimestamp()}}">
     <!-- Scripts -->
-    <script src="{{ mix('js/notices.js') }}" defer></script>
+    <script src="{{ mix('js/notices.js') }}?ver={{(new DateTime())->getTimestamp()}}" defer></script>
 </head>
 
 <body class="font-sans antialiased">

@@ -17,7 +17,7 @@ $items=[
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Roboto&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="{{ mix('css/app.css') }}" rel="stylesheet" />
+  <link href="{{ mix('css/app.css') }}?ver={{(new DateTime())->getTimestamp()}}" rel="stylesheet" />
 </head>
 
 <body class="font-sans antialiased" style="background-color: rgba(0,0,0,1)">
@@ -68,7 +68,7 @@ $items=[
       </div>
     </div>
   </div>
-  <script src="{{ mix('js/menu.js') }}" defer></script>
+  <script src="{{ mix('js/menu.js') }}?ver={{(new DateTime())->getTimestamp()}}" defer></script>
   {{ $reactjs ?? "" }}
 </body>
 
